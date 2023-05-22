@@ -8,10 +8,18 @@ import { v4 as uuid } from "uuid";
 export const products = [
   {
     _id: uuid(),
-    title: "You Can WIN",
-    author: "Shiv Khera",
-    price: "5000",
-    categoryName: "non-fiction",
+    productName: "Jannatul Firdaus ",
+    productDescription: "Jannatul Firdaus Concentrated Perfume Free From Alcohol 10ml For Unisex",
+    productImage:
+      "https://in.ajmalperfume.com/cdn/shop/products/Jannatul-Firadus1.png?v=1638013417",
+    categoryName: "Contcentrated Perfumes",
+    price: 500 ,
+    discountPercent: 10,
+    discountedPrice: 110,
+    onSale: true,
+    outOfStock: false,
+    rating: 4.5,
+    trending: true,
   },
   
 ];

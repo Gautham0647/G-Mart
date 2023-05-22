@@ -28,12 +28,19 @@ function NavBar() {
         <input className="input" type="text" placeholder="Search" />
       </div>
 
+
+
       <div>
         <nav className="nav-list">
           <ul>
             <li>
               <NavLink to="/" style={navStyle}>
                 Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/products" style={navStyle}>
+                Explore
               </NavLink>
             </li>
             <li>
