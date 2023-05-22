@@ -1,0 +1,27 @@
+.section-Category{
+    display: flex;
+	flex-flow: column nowrap;
+	padding: 2rem 10rem;
+	gap: 3rem;
+	grid-area: main;
+}
+
+
+.header{
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+
+}
+
+.categories-item{
+    display: flex;
+	flex-flow: row wrap;
+	gap: 2rem;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	margin: auto;
+    list-style: none;
+
+}
