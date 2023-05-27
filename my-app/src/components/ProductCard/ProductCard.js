@@ -27,7 +27,7 @@ export function ProductCard({ product, add, move }) {
       <p className="product-rating">{rating}</p>
       <div className="product-footer">
         <button className="product-add-to-cart">Add to Cart </button>
-        <button className="product-wishlist">WishList </button>
+        <button className="product-wishlist">Wishlist </button>
       </div>
     </div>
   );

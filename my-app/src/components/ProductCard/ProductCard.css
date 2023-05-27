@@ -6,7 +6,8 @@
 
 .product-header img {
   width: 300px;
-  height: auto;
+  height: 350px;
+  object-fit: contain;
 }
 
 .product-body {
@@ -43,11 +44,17 @@
   gap: 8px;
   justify-content: center;
   margin-bottom: 8px;
+  margin-top: 8px;
+ 
 }
 
 .product-footer button {
   cursor: pointer;
   padding: 4px 12px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:16px;
+
+
 }
 
 .product-add-to-cart{
