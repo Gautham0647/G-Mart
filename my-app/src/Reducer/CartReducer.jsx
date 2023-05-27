@@ -1,3 +1,5 @@
+import { products } from "../backend/db/products";
+
 export const initialCartState = [];
 
 export const cartReducer = (state, action) => {
@@ -26,6 +28,13 @@ export const cartReducer = (state, action) => {
         // return new cart
         return [...state, { ...action.payload, count: 1 }];
       }
+    case "REMOVE-FROM-CART":
+      console.log(action.payload, 'to remove')
+      return [...state.filter(product => {
+        console.log(product.id, 'map')
+        return product.id !== action.payload;
+      })];
+
     default:
       return state;
   }

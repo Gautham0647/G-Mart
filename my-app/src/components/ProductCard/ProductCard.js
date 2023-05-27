@@ -2,7 +2,8 @@ import { useCart } from "../../Context/CartContext";
 import "./ProductCard.css";
 
 export function ProductCard({ product, add, move }) {
-  const { cartDispatch } = useCart();
+  const { cart, cartDispatch } = useCart();
+
   const {
     _id,
     productName,
@@ -14,6 +15,7 @@ export function ProductCard({ product, add, move }) {
     rating,
   } = product;
 
+  const isProductInCart = cart.find((item) => item.id === product.id);
   return (
     <div className="product-wrapper">
       <div className="product-header">
@@ -31,10 +33,12 @@ export function ProductCard({ product, add, move }) {
         <button
           className="product-add-to-cart"
           onClick={() =>
-            cartDispatch({ type: "ADD-TO-CART", payload: product })
+            isProductInCart
+              ? cartDispatch({ type: "REMOVE-FROM-CART", payload: product.id })
+              : cartDispatch({ type: "ADD-TO-CART", payload: product })
           }
         >
-          Add to Cart
+          {isProductInCart ? "Remove to cart" : "Add to Cart"}
         </button>
         <button className="product-wishlist">Wishlist </button>
         {/* <h1>{product.count}</h1> */}
