@@ -1,0 +1,60 @@
+.product-wrapper {
+  position: relative;
+  width: 300px;
+  border: 2px solid black;
+}
+
+.product-header img {
+  width: 300px;
+  height: auto;
+}
+
+.product-body {
+  text-align: center;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+
+.product-price-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.product-discounted-price {
+  margin: 0;
+}
+
+.product-discount {
+  font-size: 12px;
+  background: pink;
+  color: red;
+  padding: 4px;
+  font-weight: 500;
+}
+
+.product-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.product-footer button {
+  cursor: pointer;
+  padding: 4px 12px;
+}
+
+.product-add-to-cart{
+
+}
+
+.product-rating {
+  position: absolute;
+  top: 0;
+}

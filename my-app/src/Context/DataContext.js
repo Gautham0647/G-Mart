@@ -1,48 +1,62 @@
-import { createContext, useContext, useEffect,useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 
 import { initialState, dataReducer } from "../Reducer/DataReducer";
 
 const DataContext = createContext();
 
-
 export function DataProvider({ children }) {
-    const [dataState, dataDispatch] = useReducer(dataReducer, initialState);
+  const [dataState, dataDispatch] = useReducer(dataReducer, initialState);
 
-const  getData = async()=>{
+  const getData = async () => {
     try {
-        const response = await fetch("/api/categories");
-        const { categories } = await response.json();
-  
-        if (response.status === 200) {
-          dataDispatch({
-            type: "SET_CATEGORIES",
-            payload: categories,
-          });
-        }
-  
-        const productResponse = await fetch("/api/products");
-        const { products } = await productResponse.json();
-  
-        if (productResponse.status === 200) {
-          dataDispatch({
-            type: "SET_PRODUCTS",
-            payload: products,
-          });
-        }
-      } catch (e) {
-        console.log(e);
-      } 
+      const response = await fetch("/api/categories");
+      const { categories } = await response.json();
 
+      if (response.status === 200) {
+        dataDispatch({
+          type: "SET_CATEGORIES",
+          payload: categories,
+        });
+      }
 
+      const productResponse = await fetch("/api/products");
+      const { products } = await productResponse.json();
+
+      if (productResponse.status === 200) {
+        dataDispatch({
+          type: "SET_PRODUCTS",
+          payload: products,
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const applyFilters = (products) => {
+    let filteredData = [...products];
+    return filteredData;
+  };
+
+  const filteredProducts = applyFilters(dataState.products);
+
+  return (
+    <DataContext.Provider
+      value={{
+        dataState,
+        dataDispatch,
+        filteredProducts,
+        products: dataState.products,
+        categories: dataState.categories,
+      }}
+    >
+      {children}
+    </DataContext.Provider>
+  );
 }
 
-
-    useEffect(()=>{
-        getData()
-    },[])
-  return (<DataContext.Provider  value={{dataState, dataDispatch, products: dataState.products,
-    categories: dataState.categories,}}>{children}</DataContext.Provider>);
-}
-
-
-export const useData = ()=> useContext(DataContext)
+export const useData = () => useContext(DataContext);
