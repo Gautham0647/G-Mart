@@ -37,19 +37,11 @@ export function DataProvider({ children }) {
     getData();
   }, []);
 
-  const applyFilters = (products) => {
-    let filteredData = [...products];
-    return filteredData;
-  };
-
-  const filteredProducts = applyFilters(dataState.products);
-
   return (
     <DataContext.Provider
       value={{
         dataState,
         dataDispatch,
-        filteredProducts,
         products: dataState.products,
         categories: dataState.categories,
       }}

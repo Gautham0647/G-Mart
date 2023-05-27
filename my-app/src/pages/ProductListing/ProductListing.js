@@ -4,15 +4,14 @@ import { ProductCard } from "../../components/ProductCard/ProductCard";
 import "./ProductListing.css";
 
 const ProductListing = () => {
-  const { filteredProducts } = useData();
+  const { products } = useData();
 
   return (
     <div>
       <div className="main">
         <h3>Showing All Products</h3>
-
         <div className="products_container">
-          {filteredProducts.map((product) => {
+          {products.map((product) => {
             return (
               <ProductCard
                 product={product}

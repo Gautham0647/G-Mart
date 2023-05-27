@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import "./Navbar.css";
 
 //? icons
@@ -21,16 +21,14 @@ function NavBar() {
           src="https://picsum.photos/200/300"
           alt="random logo"
         />
-        <p className="logo-name">FragranceX</p>
+
+        <p className="logo-name"><Link to ="/">FragranceX</Link></p>
       </div>
-
-      <div className="search-bar">
-        <input className="input" type="text" placeholder="Search" />
-      </div>
-
-
 
       <div>
+        <div className="search-bar">
+          <input className="input" type="text" placeholder="Search" />
+        </div>
         <nav className="nav-list">
           <ul>
             <li>

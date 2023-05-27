@@ -1,6 +1,8 @@
+import { useCart } from "../../Context/CartContext";
 import "./ProductCard.css";
 
 export function ProductCard({ product, add, move }) {
+  const { cartDispatch } = useCart();
   const {
     _id,
     productName,
@@ -26,8 +28,16 @@ export function ProductCard({ product, add, move }) {
       </div>
       <p className="product-rating">{rating}</p>
       <div className="product-footer">
-        <button className="product-add-to-cart">Add to Cart </button>
+        <button
+          className="product-add-to-cart"
+          onClick={() =>
+            cartDispatch({ type: "ADD-TO-CART", payload: product })
+          }
+        >
+          Add to Cart
+        </button>
         <button className="product-wishlist">Wishlist </button>
+        {/* <h1>{product.count}</h1> */}
       </div>
     </div>
   );
