@@ -29,9 +29,9 @@ export const cartReducer = (state, action) => {
         return [...state, { ...action.payload, count: 1 }];
       }
     case "REMOVE-FROM-CART":
-      console.log(action.payload, 'to remove')
+      console.log(action.payload)
       return [...state.filter(product => {
-        console.log(product.id, 'map')
+        // console.log(product.id, 'map')
         return product.id !== action.payload;
       })];
 

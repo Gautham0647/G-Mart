@@ -1,0 +1,66 @@
+.cart_product_wrapper{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cart_item{
+    border: 1px solid black;
+    background-color: #f9fafb;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2px;
+    border-radius: 6px;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+    position: relative;
+    justify-content: space-between;
+}
+
+.cart_img img{
+    width: 300px;
+    height: 350px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    object-fit: contain;
+}
+
+.cart_img:hover {
+    scale: 1.015;
+  }
+
+.cart_item_contain{
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 50%;
+    margin-left: 10px;
+}
+
+h3{
+    display: flex;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start:20px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: #302aaf;
+}
+
+.card_price{
+    font-family: "Noto Sans", sans-serif;
+}
+
+.new_price{
+    color: rgb(22, 163, 74);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.new_price::before {
+    content: "₹";
+}

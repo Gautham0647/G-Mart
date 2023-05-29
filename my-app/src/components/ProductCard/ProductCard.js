@@ -1,17 +1,15 @@
 import { useCart } from "../../Context/CartContext";
 import "./ProductCard.css";
 
-export function ProductCard({ product, add, move }) {
+export function ProductCard({ product }) {
   const { cart, cartDispatch } = useCart();
 
   const {
-    _id,
     productName,
     productImage,
     price,
-    discountedPrice,
     discountPercent,
-    onSale,
+
     rating,
   } = product;
 
@@ -24,7 +22,7 @@ export function ProductCard({ product, add, move }) {
       <div className="product-body">
         <p className="product-name">{productName}</p>
         <div className="product-price-wrapper">
-          <h3 className="product-discounted-price">${discountedPrice}/-</h3>
+          <h3 className="product-discounted-price">${price}/-</h3>
           <div className="product-discount">{discountPercent}% Off</div>
         </div>
       </div>
@@ -38,7 +36,7 @@ export function ProductCard({ product, add, move }) {
               : cartDispatch({ type: "ADD-TO-CART", payload: product })
           }
         >
-          {isProductInCart ? "Go to Card" : "Add to Cart"}
+          {isProductInCart ? "Remove from cart" : "Add to Cart"}
         </button>
         <button className="product-wishlist">Wishlist </button>
         {/* <h1>{product.count}</h1> */}
