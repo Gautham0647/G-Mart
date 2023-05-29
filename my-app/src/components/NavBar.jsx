@@ -1,10 +1,11 @@
 import React from "react";
-import { NavLink,Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 //? icons
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 
 function NavBar() {
   const navStyle = ({ isActive }) => ({
@@ -13,48 +14,36 @@ function NavBar() {
   });
 
   return (
-    <div className="navbar">
-      <div>
-        {/* logo */}
-        <img
-          className="logo-img"
-          src="https://picsum.photos/200/300"
-          alt="random logo"
-        />
-
-        <p className="logo-name"><Link to ="/">FragranceX</Link></p>
+    <nav className="navbar">
+      <div className="logo-container">
+        <NavLink to="/" className="logo-link">
+          FragrancesX
+        </NavLink>
       </div>
-
-      <div>
-        <div className="search-bar">
-          <input className="input" type="text" placeholder="Search" />
-        </div>
-        <nav className="nav-list">
-          <ul>
-            <li>
-              <NavLink to="/" style={navStyle}>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/products" style={navStyle}>
-                Explore
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/cart" style={navStyle}>
-                <ShoppingCartOutlinedIcon />
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/wishlist" style={navStyle}>
-                <FavoriteBorderOutlinedIcon />{" "}
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+      <ul className="navbar-nav">
+        <li className="nav-item-hoverles">
+          <input type="text" placeholder="SEARCH" />
+        </li>
+        <li className="nav-item">
+          <NavLink to="/products" style={navStyle}>
+          <ShoppingBagOutlinedIcon/>
+            <span className="link-text">Products</span>
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink to="/wishlist" style={navStyle} >
+          <FavoriteBorderOutlinedIcon />
+            <span className="link-text">Wishlist</span>
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink to="/cart" style={navStyle} >
+          <ShoppingCartOutlinedIcon />
+            <span className="link-text">Cart</span>
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
