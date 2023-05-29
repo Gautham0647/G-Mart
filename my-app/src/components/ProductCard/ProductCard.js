@@ -38,7 +38,7 @@ export function ProductCard({ product, add, move }) {
               : cartDispatch({ type: "ADD-TO-CART", payload: product })
           }
         >
-          {isProductInCart ? "Remove to cart" : "Add to Cart"}
+          {isProductInCart ? "Go to Card" : "Add to Cart"}
         </button>
         <button className="product-wishlist">Wishlist </button>
         {/* <h1>{product.count}</h1> */}

@@ -1,9 +1,9 @@
 .navbar {
-    background-color: #f8f8f8;
+    background-color: #302aaf;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px 30px 20px 30px;
+    padding: 15px 20px 15px 20px;
     position: sticky;
     top: 0px;
     z-index: 9999;
@@ -15,9 +15,9 @@
 
   .logo-link {
     text-decoration: none;
-    color: black;
+    color: #e4e2ee;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 3px;
   }
@@ -45,10 +45,9 @@
   
   
   .link-text {
-    color: #21171733;
+    color: #d9d5f0;
     text-decoration: none;
     margin-left: 5px;
     font-size: 1.8rem;
-    font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
   }
