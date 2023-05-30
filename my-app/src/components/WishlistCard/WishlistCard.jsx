@@ -1,8 +1,8 @@
-import { useCart } from "../../Context/CartContext";
-import "./CartProductCard.css";
+import { useWishlist } from "../../Context/WishlistContext";
+import "./WishlistCard.css";
 
-export function CartProductCard({ product }) {
-  const { cartDispatch } = useCart();
+export function WishlistCard({ product }) {
+  const { wishlistDispatch } = useWishlist();
   const {
     productName,
     productImage,
@@ -12,26 +12,29 @@ export function CartProductCard({ product }) {
     productDescription,
   } = product;
   return (
-    <div className="cart_product_wrapper">
-      <div className="cart_item">
-        <div className="cart_img">
+    <div className="wishlist_product_wrapper">
+      <div className="wishlist_item">
+        <div className="wishlist_img">
           <img src={productImage} alt={productName} />
         </div>
-        <div className="cart_item_contain">
+        <div className="wislist_item_contain">
           <h3>{productName}</h3>
           <h4>{productDescription}</h4>
-          <div className="card_price">
+          <div className="wishlist_price">
             <span className="new_price">{price}</span>
             <span className="discount_percent">{discountPercent}% off</span>
             <span className="orignal_price">₹{discountedPrice}</span>
           </div>
-          <div className="cart_footer">
+          <div className="wishlist_footer">
             <button
               onClick={() =>
-                cartDispatch({ type: "REMOVE-FROM-CART", payload: product.id })
+                wishlistDispatch({
+                  type: "REMOVE-FROM-WISHLIST",
+                  payload: product.id,
+                })
               }
             >
-              Remove from cart
+              Remove from Wishlist
             </button>
           </div>
         </div>

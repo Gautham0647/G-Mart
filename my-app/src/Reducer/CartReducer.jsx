@@ -1,4 +1,4 @@
-import { products } from "../backend/db/products";
+
 
 export const initialCartState = [];
 

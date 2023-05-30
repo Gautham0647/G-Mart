@@ -23,4 +23,4 @@ const Cart = () => {
 
 export default Cart;
 
-//<ProductCard product={product} />
+

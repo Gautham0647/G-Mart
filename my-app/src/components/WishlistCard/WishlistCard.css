@@ -1,0 +1,113 @@
+.wishlist_product_wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  
+  }
+  
+  .wishlist_item{
+      border: 1px solid black;
+      background-color: #f9fafb;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 2px;
+      border-radius: 6px;
+      width: 50%;
+      height: 350px;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px 0px;
+      position: relative;
+      justify-content: space-between;
+  }
+  
+  .wishlist_img img{
+      width: 300px;
+      height: 350px;
+      flex-shrink: 1;
+      flex-grow: 1;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+      object-fit: contain;
+  }
+  
+  .wishlist_img:hover {
+      scale: 1.015;
+    }
+  
+  .wishlist_item_contain{
+      flex-grow: 1;
+      flex-shrink: 1;
+      width: 50%;
+      margin-left: 10px;
+  }
+  
+  h3{
+      display: flex;
+      font-size: 1.17em;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start:20px;
+      margin-inline-end: 0px;
+      margin-bottom: 4px;
+      font-weight: bold;
+      color: #302aaf;
+  }
+  
+  h4{
+      display: flex;
+      font-size: 1em;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start:20px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+      margin-top: 4px;
+      color: #302aaf;
+  }
+  .wishlist_price{
+      font-family: "Noto Sans", sans-serif;
+      display: block;
+      margin-inline-start:20px;
+  }
+  
+  .new_price{
+      color: rgb(22, 163, 74);
+      font-size: 2rem;
+      font-weight: 700;
+  }
+  
+  .new_price::before {
+      content: "₹";
+  }
+  
+  .discount_percent{
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0px 10px;
+  }
+  
+  .orignal_price{
+      color: rgb(164, 164, 164);
+      font-style: italic;
+      text-decoration: line-through;
+      font-size: 1.8rem;
+  }
+  
+  
+  .wishlist_footer{
+      display: flex;
+      justify-content:last baselin;
+      gap: 8px;
+      margin-bottom: 8px;
+      margin-top: 8px;
+      flex-direction: row;
+  }
+  
+  .wishlist_footer button{
+    cursor: pointer;
+    padding: 4px 12px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+  
+  }

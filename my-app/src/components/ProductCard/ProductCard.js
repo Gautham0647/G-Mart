@@ -1,8 +1,10 @@
 import { useCart } from "../../Context/CartContext";
+import { useWishlist } from "../../Context/WishlistContext";
 import "./ProductCard.css";
 
 export function ProductCard({ product }) {
   const { cart, cartDispatch } = useCart();
+  const { wishlist, wishlistDispatch } = useWishlist();
 
   const {
     productName,
@@ -14,6 +16,7 @@ export function ProductCard({ product }) {
   } = product;
 
   const isProductInCart = cart.find((item) => item.id === product.id);
+  const isProductInWishlist = wishlist.find((item) => item.id === product.id);
   return (
     <div className="product-wrapper">
       <div className="product-header">
@@ -36,9 +39,23 @@ export function ProductCard({ product }) {
               : cartDispatch({ type: "ADD-TO-CART", payload: product })
           }
         >
-          {isProductInCart ? "Remove from cart" : "Add to Cart"}
+          {isProductInCart ? "Go to Cart" : "Add to Cart"}
         </button>
-        <button className="product-wishlist">Wishlist </button>
+        <button 
+        onClick=
+          {() =>
+            isProductInWishlist
+              ? wishlistDispatch({
+                  type: "REMOVE-FROM-WISHLIST",
+                  payload: product.id,
+                })
+              : wishlistDispatch({ type: "ADD TO WISHLIST", payload: product })
+          }
+
+         className="product-wishlist">
+          
+          {isProductInWishlist ? "Remove from wishlist" : "Add to wishlist"}
+        </button>
         {/* <h1>{product.count}</h1> */}
       </div>
     </div>

@@ -3,6 +3,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+
 }
 
 .cart_item{
@@ -11,7 +12,8 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 2px;
     border-radius: 6px;
-    width: 60%;
+    width: 50%;
+    height: 350px;
     display: flex;
     flex-wrap: wrap;
     margin: 20px 0px;
@@ -47,20 +49,65 @@ h3{
     margin-block-end: 1em;
     margin-inline-start:20px;
     margin-inline-end: 0px;
+    margin-bottom: 4px;
     font-weight: bold;
     color: #302aaf;
 }
 
+h4{
+    display: flex;
+    font-size: 1em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start:20px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-top: 4px;
+    color: #302aaf;
+}
 .card_price{
     font-family: "Noto Sans", sans-serif;
+    display: block;
+    margin-inline-start:20px;
 }
 
 .new_price{
     color: rgb(22, 163, 74);
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
 .new_price::before {
     content: "₹";
+}
+
+.discount_percent{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0px 10px;
+}
+
+.orignal_price{
+    color: rgb(164, 164, 164);
+    font-style: italic;
+    text-decoration: line-through;
+    font-size: 1.8rem;
+}
+
+
+.cart_footer{
+    display: flex;
+    justify-content:last baselin;
+    gap: 8px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    flex-direction: row;
+}
+
+.cart_footer button{
+  cursor: pointer;
+  padding: 4px 12px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+
 }
