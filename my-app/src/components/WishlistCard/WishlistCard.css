@@ -18,17 +18,18 @@
       flex-wrap: wrap;
       margin: 20px 0px;
       position: relative;
-      justify-content: space-between;
+      /* justify-content: space-between; */
   }
   
   .wishlist_img img{
-      width: 300px;
-      height: 350px;
+      width: 250px;
+      height: 300px;
       flex-shrink: 1;
       flex-grow: 1;
       cursor: pointer;
       transition: all 0.2s ease-in;
       object-fit: contain;
+      margin-top: 8px;
   }
   
   .wishlist_img:hover {
@@ -109,5 +110,6 @@
     padding: 4px 12px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
-  
+    background-color:#302aaf ;
+    color:white;
   }

@@ -12,7 +12,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 2px;
     border-radius: 6px;
-    width: 50%;
+    width: 60%;
     height: 350px;
     display: flex;
     flex-wrap: wrap;
@@ -22,13 +22,14 @@
 }
 
 .cart_img img{
-    width: 300px;
-    height: 350px;
+    width: 250px;
+    height: 300px;
     flex-shrink: 1;
     flex-grow: 1;
     cursor: pointer;
     transition: all 0.2s ease-in;
     object-fit: contain;
+    margin-top:8px; 
 }
 
 .cart_img:hover {
@@ -109,5 +110,7 @@ h4{
   padding: 4px 12px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 16px;
+  background-color:#302aaf ;
+  color:white;
 
 }

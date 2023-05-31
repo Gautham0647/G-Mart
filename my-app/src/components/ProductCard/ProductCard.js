@@ -1,5 +1,6 @@
 import { useCart } from "../../Context/CartContext";
 import { useWishlist } from "../../Context/WishlistContext";
+//import{Link} from "react-router-dom"
 import "./ProductCard.css";
 
 export function ProductCard({ product }) {
@@ -9,7 +10,7 @@ export function ProductCard({ product }) {
   const {
     productName,
     productImage,
-    price,
+    orignalPrice,
     discountPercent,
 
     rating,
@@ -25,7 +26,7 @@ export function ProductCard({ product }) {
       <div className="product-body">
         <p className="product-name">{productName}</p>
         <div className="product-price-wrapper">
-          <h3 className="product-discounted-price">${price}/-</h3>
+          <h3 className="product-discounted-price">₹{orignalPrice}/-</h3>
           <div className="product-discount">{discountPercent}% Off</div>
         </div>
       </div>
@@ -39,7 +40,7 @@ export function ProductCard({ product }) {
               : cartDispatch({ type: "ADD-TO-CART", payload: product })
           }
         >
-          {isProductInCart ? "Go to Cart" : "Add to Cart"}
+          {isProductInCart ? "GO-to Cart" : "Add to Cart"}
         </button>
         <button 
         onClick=
