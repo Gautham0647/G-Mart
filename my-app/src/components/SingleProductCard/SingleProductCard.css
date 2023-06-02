@@ -1,4 +1,4 @@
-.wishlist_product_wrapper{
+.singlePage_product_wrapper{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -6,7 +6,7 @@
   
   }
   
-  .wishlist_item{
+  .singlePage_item{
       border: 1px solid black;
       background-color: #f9fafb;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -18,10 +18,10 @@
       flex-wrap: wrap;
       margin: 20px 0px;
       position: relative;
-      /* justify-content: space-between; */
+      justify-content: space-between;
   }
   
-  .wishlist_img img{
+  .singlePage_img img{
       width: 250px;
       height: 300px;
       flex-shrink: 1;
@@ -29,14 +29,14 @@
       cursor: pointer;
       transition: all 0.2s ease-in;
       object-fit: contain;
-      margin-top: 8px;
+      margin-top:8px; 
   }
   
-  .wishlist_img:hover {
+  .singlePage_img:hover {
       scale: 1.015;
     }
   
-  .wishlist_item_contain{
+  .singlePage_item_contain{
       flex-grow: 1;
       flex-shrink: 1;
       width: 50%;
@@ -66,7 +66,7 @@
       margin-top: 4px;
       color: #302aaf;
   }
-  .wishlist_price{
+  .card_price{
       font-family: "Noto Sans", sans-serif;
       display: block;
       margin-inline-start:20px;
@@ -96,7 +96,7 @@
   }
   
   
-  .wishlist_footer{
+  .singlePage_footer{
       display: flex;
       justify-content:last baselin;
       gap: 8px;
@@ -105,11 +105,12 @@
       flex-direction: row;
   }
   
-  .wishlist_footer button{
+  .singlePage_footer button{
     cursor: pointer;
     padding: 4px 12px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
     background-color:#302aaf ;
     color:white;
+  
   }

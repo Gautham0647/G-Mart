@@ -23,13 +23,14 @@ export function ProductCard({ product }) {
   return (
     <div className="product-wrapper">
       <div className="product-header">
-      <NavLink to={`/products/${id}`}>
-        <img src={productImage} alt={productName} />
+        <NavLink to={`/products/${id}`}>
+          <img src={productImage} alt={productName} />
         </NavLink>
       </div>
       <div className="product-body">
-      
-        <p className="product-name"><NavLink to={`/products/${id}`}>{productName}</NavLink></p>
+        <p className="product-name">
+          <NavLink to={`/products/${id}`}>{productName}</NavLink>
+        </p>
         <div className="product-price-wrapper">
           <h3 className="product-discounted-price">₹{orignalPrice}/-</h3>
           <div className="product-discount">{discountPercent}% Off</div>
@@ -45,11 +46,10 @@ export function ProductCard({ product }) {
               : cartDispatch({ type: "ADD-TO-CART", payload: product })
           }
         >
-          {isProductInCart ? "GO-to Cart" : "Add to Cart"}
+          {isProductInCart ? "GO to Cart" : "Add to Cart"}
         </button>
-        <button 
-        onClick=
-          {() =>
+        <button
+          onClick={() =>
             isProductInWishlist
               ? wishlistDispatch({
                   type: "REMOVE-FROM-WISHLIST",
@@ -57,9 +57,8 @@ export function ProductCard({ product }) {
                 })
               : wishlistDispatch({ type: "ADD TO WISHLIST", payload: product })
           }
-
-         className="product-wishlist">
-          
+          className="product-wishlist"
+        >
           {isProductInWishlist ? "Remove from wishlist" : "Add to wishlist"}
         </button>
         {/* <h1>{product.count}</h1> */}
