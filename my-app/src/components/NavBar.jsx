@@ -6,8 +6,10 @@ import "./Navbar.css";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import { useData } from "../Context/DataContext";
 
 function NavBar() {
+  const {dataDispatch} = useData();
   const navStyle = ({ isActive }) => ({
     color: isActive ? "yellow" : "#21165e",
     fontWeight: isActive ? "400" : "350",
@@ -22,7 +24,9 @@ function NavBar() {
       </div>
       <ul className="navbar-nav">
         <li className="nav-item-hoverles">
-          <input type="text" placeholder="SEARCH" />
+          <input 
+           onChange={(e)=>dataDispatch({type:"SEARCH-VALUE",payload:e.target.value})}
+          type="text" placeholder="SEARCH" />
         </li>
         <li className="nav-item">
           <NavLink to="/products" style={navStyle}>

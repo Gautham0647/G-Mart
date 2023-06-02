@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useCart } from "../../Context/CartContext";
 import { useWishlist } from "../../Context/WishlistContext";
 //import{Link} from "react-router-dom"
@@ -8,6 +9,7 @@ export function ProductCard({ product }) {
   const { wishlist, wishlistDispatch } = useWishlist();
 
   const {
+    id,
     productName,
     productImage,
     orignalPrice,
@@ -21,10 +23,13 @@ export function ProductCard({ product }) {
   return (
     <div className="product-wrapper">
       <div className="product-header">
+      <NavLink to={`/products/${id}`}>
         <img src={productImage} alt={productName} />
+        </NavLink>
       </div>
       <div className="product-body">
-        <p className="product-name">{productName}</p>
+      
+        <p className="product-name"><NavLink to={`/products/${id}`}>{productName}</NavLink></p>
         <div className="product-price-wrapper">
           <h3 className="product-discounted-price">₹{orignalPrice}/-</h3>
           <div className="product-discount">{discountPercent}% Off</div>

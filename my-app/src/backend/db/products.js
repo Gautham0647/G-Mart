@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+//import { v4 as uuid } from "uuid";
 
 /**
  * Product Database can be added here.
@@ -8,7 +8,7 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
   {
-    _id: uuid(),
+    id: 1,
     productName: "Jannatul Firdaus ",
     productDescription:
       "Jannatul Firdaus Concentrated Perfume Free From Alcohol 10ml For Unisex",
@@ -24,7 +24,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 2,
     productName: "Global Desi Rhythmic",
     productDescription: "Soul Body Mist 200ML For Women Crafted By Ajmal",
     productImage:
@@ -39,7 +39,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 3,
     productName: "Ascend Deodorant",
     productDescription: "Oriental Perfume 150ML For Unisex",
     productImage:
@@ -54,7 +54,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 4,
     productName: "Dakhoon ",
     productDescription: "Dakhoon Al Safa 200GMS",
     productImage:
@@ -69,7 +69,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 5,
     productName: "Kouros Body Cologne",
     productDescription: "100 ml Eau De Toilette Spray",
     productImage:
@@ -84,7 +84,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 6,
     productName: "Jimmy Choo Man",
     productDescription:
       "Jimmy Choo Man Blue Cologne 100 ml Eau De Toilette Spray",
@@ -100,7 +100,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 7,
     productName: "Crystal Noir Perfume",
     productDescription: "90 ml Eau De Parfum Spray",
     productImage:
@@ -115,7 +115,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 8,
     productName: "AND Serene Bliss Body Mist ",
     productDescription:
       "AND Serene Bliss Body Mist 200ML For Women Crafted By Ajmal",
@@ -131,7 +131,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 9,
     productName: "Carbon Deodorant ",
     productDescription: "Carbon Perfume Deodorant 200ml For Men",
     productImage:
@@ -146,7 +146,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 10,
     productName: "Bleu de Chanel ",
     productDescription: "Mens Deo Chivalorus Charm 150 ml",
     productImage:
@@ -161,7 +161,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 11,
     productName: "Lady Million",
     productDescription:
       "Paco Rabanne Bitter orange Heart Notes Orange blossom,Jasmine sambac ",
@@ -177,7 +177,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 12,
     productName: "Pure Posion",
     productDescription: "Dior Pure Poison Eau de Parfum",
     productImage:
@@ -192,7 +192,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 13,
     productName: "Gucci Bloom",
     productDescription:
       "Jasmine and Honeysuckle; middle note is Tuberose; base notes are Damask Rose and Orris.",
@@ -208,7 +208,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 14,
     productName: "Jaguar Classic ",
     productDescription: "Jaguar Classic Chromite Eau de Toilette (100ml)",
     productImage:
@@ -223,7 +223,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 15,
     productName: "Jean Paul Gaultier",
     productDescription: "Jean Paul Gaultier So Scandal! Eau De Parfum (30ml)",
     productImage:
@@ -238,7 +238,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 16,
     productName: "Rabanne Olympea",
     productDescription: "Paco Rabanne Olympea Solar Eau de Parfum (30ml)",
     productImage:
@@ -253,7 +253,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 17,
     productName: "Missoni Perfumed ",
     productDescription: "Missoni Perfumed Deodorant (50ml) ",
     productImage:
@@ -268,7 +268,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 18,
     productName: "Jaguar Classic ",
     productDescription: "Jaguar Classic Chromite Eau de Toilette (100ml)",
     productImage:
@@ -283,7 +283,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 19,
     productName: "Gucci Bloom",
     productDescription:
       "Jasmine and Honeysuckle; middle note is Tuberose; base notes are Damask Rose and Orris.",
@@ -299,7 +299,7 @@ export const products = [
     trending: true,
   },
   {
-    _id: uuid(),
+    id: 20,
     productName: "Carbon Deodorant ",
     productDescription: "Carbon Perfume Deodorant 200ml For Men",
     productImage:
