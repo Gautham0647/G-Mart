@@ -22,6 +22,7 @@ export function ProductCard({ product }) {
   const isProductInWishlist = wishlist.find((item) => item.id === product.id);
   return (
     <div className="product-wrapper">
+      
       <div className="product-header">
         <NavLink to={`/products/${id}`}>
           <img src={productImage} alt={productName} />

@@ -9,7 +9,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { DataProvider } from "./Context/DataContext";
 import { CartProvider } from "./Context/CartContext";
 import { WishlistProvider } from "./Context/WishlistContext";
-
+import { FilterProvider } from "./Context/FilterContext";
 
 // Call make Server
 makeServer();
@@ -19,9 +19,11 @@ ReactDOM.render(
     <Router>
       <DataProvider>
         <CartProvider>
-         <WishlistProvider>
-            <App />
-            </WishlistProvider>
+          <WishlistProvider>
+            <FilterProvider>
+              <App />
+            </FilterProvider>
+          </WishlistProvider>
         </CartProvider>
       </DataProvider>
     </Router>
