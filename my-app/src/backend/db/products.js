@@ -20,7 +20,7 @@ export const products = [
     orignalPrice: 800,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 4,
     trending: true,
   },
   {
@@ -35,7 +35,7 @@ export const products = [
     orignalPrice: 900,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 3,
     trending: true,
   },
   {
@@ -50,7 +50,7 @@ export const products = [
     orignalPrice: 300,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 2,
     trending: true,
   },
   {
@@ -65,7 +65,7 @@ export const products = [
     orignalPrice: 500,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 3,
     trending: true,
   },
   {
@@ -80,7 +80,7 @@ export const products = [
     orignalPrice: 600,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 4,
     trending: true,
   },
   {
@@ -96,7 +96,7 @@ export const products = [
     orignalPrice: 900,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 1,
     trending: true,
   },
   {
@@ -111,7 +111,7 @@ export const products = [
     orignalPrice: 1250,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 3,
     trending: true,
   },
   {
@@ -127,7 +127,7 @@ export const products = [
     orignalPrice: 200,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 3,
     trending: true,
   },
   {
@@ -142,7 +142,7 @@ export const products = [
     orignalPrice: 180,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 4,
     trending: true,
   },
   {
@@ -157,7 +157,7 @@ export const products = [
     orignalPrice: 260,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 3,
     trending: true,
   },
   {
@@ -173,7 +173,7 @@ export const products = [
     orignalPrice: 5000,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 4,
     trending: true,
   },
   {
@@ -188,7 +188,7 @@ export const products = [
     orignalPrice: 8000,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 3,
     trending: true,
   },
   {
@@ -204,7 +204,7 @@ export const products = [
     orignalPrice: 5000,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 3,
     trending: true,
   },
   {
@@ -219,7 +219,7 @@ export const products = [
     orignalPrice: 12000,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 2,
     trending: true,
   },
   {
@@ -234,7 +234,7 @@ export const products = [
     orignalPrice: 9000,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 1,
     trending: true,
   },
   {
@@ -249,7 +249,7 @@ export const products = [
     orignalPrice: 3500,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 2,
     trending: true,
   },
   {
@@ -264,7 +264,7 @@ export const products = [
     orignalPrice: 2000,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 2,
     trending: true,
   },
   {
@@ -279,7 +279,7 @@ export const products = [
     orignalPrice: 12000,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 2,
     trending: true,
   },
   {
@@ -295,7 +295,7 @@ export const products = [
     orignalPrice: 5000,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 3,
     trending: true,
   },
   {
@@ -310,7 +310,7 @@ export const products = [
     orignalPrice: 180,
     onSale: true,
     outOfStock: false,
-    rating: 4.5,
+    rating: 4,
     trending: true,
   },
 ];

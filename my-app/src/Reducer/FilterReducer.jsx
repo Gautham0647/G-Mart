@@ -3,6 +3,7 @@ export const initialFilter = {
   category: [],
   rating: 0,
   sort: "",
+  search: "",
 };
 
 export const filterReducer = (state, action) => {
@@ -23,10 +24,12 @@ export const filterReducer = (state, action) => {
         ...state,
         category: newCategory,
       };
-      case "SORT-BY-PRICE":
-        return {...state,sort : action.payload}
-        
+    case "SORT-BY-PRICE":
+      return { ...state, sort: action.payload };
 
+    case "SEARCH-VALUE":
+        return {...state, search:action.payload};
+        
     default:
       return state;
   }

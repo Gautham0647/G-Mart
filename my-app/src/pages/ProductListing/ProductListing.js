@@ -37,6 +37,12 @@ const ProductListing = () => {
         (a, b) => b.orignalPrice - a.orignalPrice
       );
     }
+    if (search.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        product.productName.toLowerCase().includes(search.toLowerCase() )||
+        product.categoryName.toLowerCase().includes(search.toLowerCase())
+      );
+    }
 
     return filteredProducts;
   };

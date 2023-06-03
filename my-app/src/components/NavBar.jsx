@@ -5,11 +5,13 @@ import "./Navbar.css";
 //? icons
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import { useData } from "../Context/DataContext";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+//import { useData } from "../Context/DataContext";
+import { useFilter } from "../Context/FilterContext";
 
 function NavBar() {
-  const {dataDispatch} = useData();
+  //const {dataDispatch} = useData();
+  const { filterDispatch } = useFilter();
   const navStyle = ({ isActive }) => ({
     color: isActive ? "yellow" : "#21165e",
     fontWeight: isActive ? "400" : "350",
@@ -24,26 +26,36 @@ function NavBar() {
       </div>
       <ul className="navbar-nav">
         <li className="nav-item-hoverles">
-          <input 
-           onChange={(e)=>dataDispatch({type:"SEARCH-VALUE",payload:e.target.value})}
-          type="text" placeholder="SEARCH" />
+          <input
+            onChange={(e) =>
+              filterDispatch({ type: "SEARCH-VALUE", payload: e.target.value })
+            }
+            type="text"
+            placeholder="SEARCH"
+          />
         </li>
+
         <li className="nav-item">
           <NavLink to="/products" style={navStyle}>
-          <ShoppingBagOutlinedIcon/>
+            <ShoppingBagOutlinedIcon />
             <span className="link-text">Products</span>
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/wishlist" style={navStyle} >
-          <FavoriteBorderOutlinedIcon />
+          <NavLink to="/wishlist" style={navStyle}>
+            <FavoriteBorderOutlinedIcon />
             <span className="link-text">Wishlist</span>
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/cart" style={navStyle} >
-          <ShoppingCartOutlinedIcon />
+          <NavLink to="/cart" style={navStyle}>
+            <ShoppingCartOutlinedIcon />
             <span className="link-text">Cart</span>
+          </NavLink>
+        </li>
+        <li className="">
+          <NavLink to="/login" style={navStyle}>
+            <span className="link-text">Login</span>
           </NavLink>
         </li>
       </ul>
