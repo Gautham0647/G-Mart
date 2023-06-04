@@ -30,7 +30,7 @@ export function WishlistCard({ product }) {
               onClick={() =>
                 wishlistDispatch({
                   type: "REMOVE-FROM-WISHLIST",
-                  payload: product.id,
+                  payload: product._id,
                 })
               }
             >

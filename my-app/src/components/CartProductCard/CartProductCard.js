@@ -28,7 +28,7 @@ export function CartProductCard({ product }) {
           <div className="cart_footer">
             <button
               onClick={() =>
-                cartDispatch({ type: "REMOVE-FROM-CART", payload: product.id })
+                cartDispatch({ type: "REMOVE-FROM-CART", payload: product._id })
               }
             >
               Remove from cart

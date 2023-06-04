@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 //? icons
@@ -8,15 +8,39 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 //import { useData } from "../Context/DataContext";
 import { useFilter } from "../Context/FilterContext";
+import { useAuth } from "../Context/AuthContext";
 
 function NavBar() {
-  //const {dataDispatch} = useData();
+  const { isAuth, toggleAuth } = useAuth();
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
   const { filterDispatch } = useFilter();
   const navStyle = ({ isActive }) => ({
     color: isActive ? "yellow" : "#21165e",
     fontWeight: isActive ? "400" : "350",
   });
 
+  const renderAuthButton = isAuth ? (
+    <div onClick={() => {
+      localStorage.removeItem('storeToken');
+      return toggleAuth();
+    } }>
+      <span className="link-text">Logout</span>
+    </div>
+  ) : (
+    <NavLink to="/login">
+      <span className="link-text">Login</span>
+    </NavLink>
+  );
+
+  const searchHandler = (e) => {
+    e.preventDefault();
+    if (pathname !== '/products') {
+      navigate('/products')
+    }
+    filterDispatch({ type: "SEARCH-VALUE", payload: e.target.search.value })
+  };
+  
   return (
     <nav className="navbar">
       <div className="logo-container">
@@ -26,13 +50,16 @@ function NavBar() {
       </div>
       <ul className="navbar-nav">
         <li className="nav-item-hoverles">
+          <form onSubmit={searchHandler}>
           <input
             onChange={(e) =>
               filterDispatch({ type: "SEARCH-VALUE", payload: e.target.value })
             }
             type="text"
+            name="search"
             placeholder="SEARCH"
           />
+          </form>
         </li>
 
         <li className="nav-item">
@@ -54,9 +81,7 @@ function NavBar() {
           </NavLink>
         </li>
         <li className="">
-          <NavLink to="/login" style={navStyle}>
-            <span className="link-text">Login</span>
-          </NavLink>
+          {renderAuthButton}
         </li>
       </ul>
     </nav>

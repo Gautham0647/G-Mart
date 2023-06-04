@@ -3,7 +3,7 @@ import { useData } from "../../Context/DataContext";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
 import "./ProductListing.css";
 import { useFilter } from "../../Context/FilterContext";
-import { filterReducer } from "../../Reducer/FilterReducer";
+//import { filterReducer } from "../../Reducer/FilterReducer";
 
 const ProductListing = () => {
   const { products } = useData();

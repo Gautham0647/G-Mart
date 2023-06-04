@@ -1,36 +1,59 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useCart } from "../../Context/CartContext";
 import { useWishlist } from "../../Context/WishlistContext";
 //import{Link} from "react-router-dom"
 import "./ProductCard.css";
+import { useAuth } from "../../Context/AuthContext";
 
 export function ProductCard({ product }) {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const { isAuth } = useAuth()
   const { cart, cartDispatch } = useCart();
   const { wishlist, wishlistDispatch } = useWishlist();
 
   const {
-    id,
+    _id,
     productName,
     productImage,
     orignalPrice,
     discountPercent,
-
     rating,
   } = product;
 
-  const isProductInCart = cart.find((item) => item.id === product.id);
-  const isProductInWishlist = wishlist.find((item) => item.id === product.id);
+  const isProductInCart = cart.find((item) => item._id === product._id);
+  const isProductInWishlist = wishlist.find((item) => item._id === product._id);
+
+  const addToCartHandler = () => {
+    // if not logged in navigate to /login
+    if (!isAuth) return navigate("/login");
+
+    // location?
+    // if /cart --> a
+    // a remove from cart
+    if (pathname !== "/cart" && isProductInCart) return navigate("/cart");
+
+    // else b go to cart
+    return isProductInCart
+      ? cartDispatch({ type: "REMOVE-FROM-CART", payload: product._id })
+      : cartDispatch({ type: "ADD-TO-CART", payload: product });
+  };
+
+  const addToCartButtonText = () => {
+    if (pathname !== "/cart" && isProductInCart) return "Go to Cart";
+    return isProductInCart ? "Remove from Cart" : "Add from Cart";
+  };
+
   return (
     <div className="product-wrapper">
-      
       <div className="product-header">
-        <NavLink to={`/products/${id}`}>
+        <NavLink to={`/products/${_id}`}>
           <img src={productImage} alt={productName} />
         </NavLink>
       </div>
       <div className="product-body">
         <p className="product-name">
-          <NavLink to={`/products/${id}`}>{productName}</NavLink>
+          <NavLink to={`/products/${_id}`}>{productName}</NavLink>
         </p>
         <div className="product-price-wrapper">
           <h3 className="product-discounted-price">₹{orignalPrice}/-</h3>
@@ -39,22 +62,15 @@ export function ProductCard({ product }) {
       </div>
       <p className="product-rating">{rating}</p>
       <div className="product-footer">
-        <button
-          className="product-add-to-cart"
-          onClick={() =>
-            isProductInCart
-              ? cartDispatch({ type: "REMOVE-FROM-CART", payload: product.id })
-              : cartDispatch({ type: "ADD-TO-CART", payload: product })
-          }
-        >
-          {isProductInCart ? "GO to Cart" : "Add to Cart"}
+        <button className="product-add-to-cart" onClick={addToCartHandler}>
+          {addToCartButtonText()}
         </button>
         <button
           onClick={() =>
             isProductInWishlist
               ? wishlistDispatch({
                   type: "REMOVE-FROM-WISHLIST",
-                  payload: product.id,
+                  payload: product._id,
                 })
               : wishlistDispatch({ type: "ADD TO WISHLIST", payload: product })
           }

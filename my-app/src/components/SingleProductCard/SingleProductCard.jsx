@@ -15,8 +15,8 @@ export function SingleProductCard({ product }) {
     productDescription,
   } = product;
 
-  const isProductInCart = cart.find((item) => item.id === product.id);
-  const isProductInWishlist = wishlist.find((item) => item.id === product.id);
+  const isProductInCart = cart.find((item) => item._id === product._id);
+  const isProductInWishlist = wishlist.find((item) => item._id === product._id);
   return (
     <div className="singlePage_product_wrapper">
       <div className="singlePage_item">
@@ -37,7 +37,7 @@ export function SingleProductCard({ product }) {
                 isProductInCart
                   ? cartDispatch({
                       type: "REMOVE-FROM-CART",
-                      payload: product.id,
+                      payload: product._id,
                     })
                   : cartDispatch({ type: "ADD-TO-CART", payload: product })
               }
@@ -49,7 +49,7 @@ export function SingleProductCard({ product }) {
                 isProductInWishlist
                   ? wishlistDispatch({
                       type: "REMOVE-FROM-WISHLIST",
-                      payload: product.id,
+                      payload: product._id,
                     })
                   : wishlistDispatch({
                       type: "ADD TO WISHLIST",
@@ -65,5 +65,3 @@ export function SingleProductCard({ product }) {
     </div>
   );
 }
-
-
