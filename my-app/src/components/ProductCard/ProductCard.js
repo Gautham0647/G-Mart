@@ -1,4 +1,7 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
+import StarIcon from '@mui/icons-material/Star';
+
 import { useCart } from "../../Context/CartContext";
 import { useWishlist } from "../../Context/WishlistContext";
 //import{Link} from "react-router-dom"
@@ -8,7 +11,7 @@ import { useAuth } from "../../Context/AuthContext";
 export function ProductCard({ product }) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const { isAuth } = useAuth()
+  const { isAuth } = useAuth();
   const { cart, cartDispatch } = useCart();
   const { wishlist, wishlistDispatch } = useWishlist();
 
@@ -17,6 +20,7 @@ export function ProductCard({ product }) {
     productName,
     productImage,
     orignalPrice,
+    price,
     discountPercent,
     rating,
   } = product;
@@ -56,16 +60,19 @@ export function ProductCard({ product }) {
           <NavLink to={`/products/${_id}`}>{productName}</NavLink>
         </p>
         <div className="product-price-wrapper">
-          <h3 className="product-discounted-price">₹{orignalPrice}/-</h3>
+          <h3 className="product-discounted-price">₹{price}/-</h3>
+          <h4 className="product-orignal-price">₹{orignalPrice}</h4>
           <div className="product-discount">{discountPercent}% Off</div>
         </div>
       </div>
-      <p className="product-rating">{rating}</p>
+      <p className="product-rating">{rating}
+      <StarIcon/>
+      </p>
       <div className="product-footer">
         <button className="product-add-to-cart" onClick={addToCartHandler}>
           {addToCartButtonText()}
         </button>
-        <button
+        <FavoriteBorderRoundedIcon
           onClick={() =>
             isProductInWishlist
               ? wishlistDispatch({
@@ -74,10 +81,12 @@ export function ProductCard({ product }) {
                 })
               : wishlistDispatch({ type: "ADD TO WISHLIST", payload: product })
           }
-          className="product-wishlist"
-        >
+          className="heart-icon"
+        />
+        
+        {/* <FavoriteBorderRoundedIcon>
           {isProductInWishlist ? "Remove from wishlist" : "Add to wishlist"}
-        </button>
+        </FavoriteBorderRoundedIcon> */}
         {/* <h1>{product.count}</h1> */}
       </div>
     </div>

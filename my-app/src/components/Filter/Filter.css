@@ -1,0 +1,39 @@
+.filter-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+    grid-gap: 1rem;
+    gap: 1rem;
+    border-right: 2px solid black;
+  }
+
+  .heading-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .clear {
+    cursor: pointer;
+  }
+
+ .filter-container .filter-title {
+      font-weight: bold;
+      font-size: 2.5rem;
+
+    }
+
+    .slider-value-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.75rem;
+      }   
+      input {
+        margin-right: 1rem;
+        vertical-align: middle;
+      }
+  
+      input[type="range"] {
+        width: 100%;
+        accent-color: #302aaf;
+      }

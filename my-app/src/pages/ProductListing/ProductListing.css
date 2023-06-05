@@ -1,4 +1,31 @@
-.products_container{
+@media(min-width:1024px) {
+
+    /* product main layout */
+    .product-container {
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+
+    .product-card-container {
+        flex-direction: row;
+        
+    }
+
+}
+.product-list-container {
+    padding: 1rem 3rem;
+    text-align: center;
+  }
+
+  .product-list-container span {
+    color: grey;
+    font-size: 15px;
+    vertical-align: middle;
+  }
+
+
+
+.products-card-container{
     display: flex;
     justify-content: center;
     flex-direction: row;

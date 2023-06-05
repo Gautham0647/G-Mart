@@ -2,10 +2,12 @@ import React from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
+
 //? icons
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 //import { useData } from "../Context/DataContext";
 import { useFilter } from "../Context/FilterContext";
 import { useAuth } from "../Context/AuthContext";
@@ -48,19 +50,21 @@ function NavBar() {
           FragrancesX
         </NavLink>
       </div>
-      <ul className="navbar-nav">
-        <li className="nav-item-hoverles">
+        <div className="input-container">
+          <SearchRoundedIcon   className="search-icon"/>
           <form onSubmit={searchHandler}>
           <input
+          
             onChange={(e) =>
               filterDispatch({ type: "SEARCH-VALUE", payload: e.target.value })
             }
             type="text"
             name="search"
-            placeholder="SEARCH"
+            placeholder="Search"
           />
           </form>
-        </li>
+        </div>
+      <ul className="navbar-nav">
 
         <li className="nav-item">
           <NavLink to="/products" style={navStyle}>

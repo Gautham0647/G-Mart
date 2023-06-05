@@ -1,7 +1,7 @@
 export const initialFilter = {
   priceRange: 15000,
   category: [],
-  rating: 0,
+  rating: "",
   sort: "",
   search: "",
 };
@@ -29,6 +29,16 @@ export const filterReducer = (state, action) => {
 
     case "SEARCH-VALUE":
         return {...state, search:action.payload};
+        case "CLEAR-FILTERS":
+          return {
+            ...state,
+            priceRange: 15000,
+  category: [],
+  rating: 0,
+  sort: "",
+  search: "",
+
+          }
         
     default:
       return state;

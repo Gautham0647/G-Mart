@@ -1,27 +1,70 @@
-.singlePage_product_wrapper{
+@media(min-width:1024px) {
+    .product-detail-card{
+        width: 50vw;
+        flex-direction: row;
+    }
+
+}
+
+.product-detail-card{
+    box-shadow: 0 1px 10px 2px #3b1db0;
+    border-radius: 10px;
+    padding: 2rem;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5rem;
+    color: #302aaf;
+    margin: 3rem auto;
     align-items: center;
   
   }
-  
-  .singlePage_item{
-      border: 1px solid black;
-      background-color: #f9fafb;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      padding: 2px;
-      border-radius: 6px;
-      width: 60%;
-      height: 350px;
-      display: flex;
-      flex-wrap: wrap;
-      margin: 20px 0px;
-      position: relative;
-      justify-content: space-between;
+  . .product-detail-card .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
   }
+
+  .product-detail-card .product-name {
+    font-size: 20px;
+  }
+  .product-name{
+    font-size: 1.25rem;
+    font-weight: var(--semi-bold);
+    text-decoration: none;
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+
+  .product-detail-card .description {
+    font-size: 20px;
+  }
+
+  .rating{
+    font-size: 1.7rem;
+    color: #45c045;
+    font-weight: 500;
+  }
+  .price-container {
+    display: flex;
+    gap: 1rem;
+    font-weight: bold;
+    font-size: var(--p-mobile);
+  }
+
+  .original-price {
+    color: #adaaaa;
+    text-decoration: line-through;
+  }
+
+  .discount {
+    color: #19ae19;
+  }
+
+
   
-  .singlePage_img img{
+   .singlePage_img img{
       width: 250px;
       height: 300px;
       flex-shrink: 1;
@@ -36,65 +79,7 @@
       scale: 1.015;
     }
   
-  .singlePage_item_contain{
-      flex-grow: 1;
-      flex-shrink: 1;
-      width: 50%;
-      margin-left: 10px;
-  }
-  
-  h3{
-      display: flex;
-      font-size: 1.17em;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start:20px;
-      margin-inline-end: 0px;
-      margin-bottom: 4px;
-      font-weight: bold;
-      color: #302aaf;
-  }
-  
-  h4{
-      display: flex;
-      font-size: 1em;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start:20px;
-      margin-inline-end: 0px;
-      font-weight: bold;
-      margin-top: 4px;
-      color: #302aaf;
-  }
-  .card_price{
-      font-family: "Noto Sans", sans-serif;
-      display: block;
-      margin-inline-start:20px;
-  }
-  
-  .new_price{
-      color: rgb(22, 163, 74);
-      font-size: 2rem;
-      font-weight: 700;
-  }
-  
-  .new_price::before {
-      content: "₹";
-  }
-  
-  .discount_percent{
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0px 10px;
-  }
-  
-  .orignal_price{
-      color: rgb(164, 164, 164);
-      font-style: italic;
-      text-decoration: line-through;
-      font-size: 1.8rem;
-  }
-  
+ 
   
   .singlePage_footer{
       display: flex;
@@ -113,4 +98,4 @@
     background-color:#302aaf ;
     color:white;
   
-  }
+  } 

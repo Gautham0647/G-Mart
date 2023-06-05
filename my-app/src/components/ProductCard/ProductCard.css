@@ -1,13 +1,41 @@
 .product-wrapper {
   position: relative;
-  width: 300px;
-  border: 2px solid black;
+  /* width: 300px; */
+  width: 23vw;
+  border: 2px solid #524be2;
+  box-shadow: 0 1px 10px 2px #cac7c7;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  
 }
+.product-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.product-wrapper .heart-icon {
+  align-self: flex-end;
+  font-size:30px;
+  color: black;
+  cursor: pointer
+}
+
+.product-wrapper .heart-icon:hover {
+  color: red
+}
+
+
+
 
 .product-header img {
   width: 300px;
   height: 350px;
   object-fit: contain; 
+  
+  overflow: clip;
 }
 
 .product-body {
@@ -15,18 +43,32 @@
 }
 
 .product-name {
-  font-size: 18px;
-  font-weight: 500;
+  /* font-size: 18px;
+  font-weight: 500; */
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #302aaf;
+  cursor: pointer;
 }
+
 
 .product-price-wrapper {
   display: flex;
   justify-content: center;
   gap: 8px;
+  height: 35%;
+  
 }
+
 
 .product-discounted-price {
   margin: 0;
+}
+.product-orignal-price{
+  color: #adaaaa;
+  text-decoration: line-through;
+  font-size: 15px;
 }
 
 .product-discount {
@@ -48,9 +90,16 @@
 
 .product-footer button {
   cursor: pointer;
-  padding: 4px 12px;
+  padding: 4px 25px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #302aaf;
+  box-shadow: 0 1px 10px 2px #db5a3d;
+  
 }
 
 
@@ -58,4 +107,7 @@
 .product-rating {
   position: absolute;
   top: 0;
+  font-size: 1.5rem;
+  color: #ffc800;
+  font-weight: 500;
 }

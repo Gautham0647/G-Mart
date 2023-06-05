@@ -1,3 +1,5 @@
+import StarIcon from "@mui/icons-material/Star";
+
 import { useCart } from "../../Context/CartContext";
 import { useWishlist } from "../../Context/WishlistContext";
 import "./SingleProductCard.css";
@@ -13,55 +15,67 @@ export function SingleProductCard({ product }) {
     orignalPrice,
     discountPercent,
     productDescription,
+    rating,
   } = product;
 
   const isProductInCart = cart.find((item) => item._id === product._id);
   const isProductInWishlist = wishlist.find((item) => item._id === product._id);
   return (
-    <div className="singlePage_product_wrapper">
-      <div className="singlePage_item">
-        <div className="singlePage_img">
-          <img src={productImage} alt={productName} />
+    <div className="product-detail-card">
+      <div className="singlePage_img">
+        <img src={productImage} alt={productName} />
+      </div>
+      <div className="details">
+        <h1 className="product-name">{productName}</h1>
+        <p className="rating">
+          {rating}
+          <StarIcon />
+        </p>
+        <p className="description">{productDescription}</p>
+        <div className="price-container">
+          <p>₹{price}</p>
+          <p className="original-price">{orignalPrice}</p>
+          <p className="discount">{discountPercent}% off</p>
         </div>
-        <div className="singlePage_item_contain">
-          <h3>{productName}</h3>
-          <h4>{productDescription}</h4>
-          <div className="card_price">
-            <span className="new_price">{price}</span>
-            <span className="discount_percent">{discountPercent}% off</span>
-            <span className="orignal_price">₹{orignalPrice}</span>
-          </div>
-          <div className="singlePage_footer">
-            <button
-              onClick={() =>
-                isProductInCart
-                  ? cartDispatch({
-                      type: "REMOVE-FROM-CART",
-                      payload: product._id,
-                    })
-                  : cartDispatch({ type: "ADD-TO-CART", payload: product })
-              }
-            >
-              {isProductInCart ? "GO to Cart" : "Add to Cart"}
-            </button>
-            <button
-              onClick={() =>
-                isProductInWishlist
-                  ? wishlistDispatch({
-                      type: "REMOVE-FROM-WISHLIST",
-                      payload: product._id,
-                    })
-                  : wishlistDispatch({
-                      type: "ADD TO WISHLIST",
-                      payload: product,
-                    })
-              }
-            >
-              {isProductInWishlist ? "Remove from wishlist" : "Add to wishlist"}
-            </button>
-          </div>
+
+        <div className="singlePage_footer">
+          <button
+            onClick={() =>
+              isProductInCart
+                ? cartDispatch({
+                    type: "REMOVE-FROM-CART",
+                    payload: product._id,
+                  })
+                : cartDispatch({ type: "ADD-TO-CART", payload: product })
+            }
+          >
+            {isProductInCart ? "GO to Cart" : "Add to Cart"}
+          </button>
+          <button
+            onClick={() =>
+              isProductInWishlist
+                ? wishlistDispatch({
+                    type: "REMOVE-FROM-WISHLIST",
+                    payload: product._id,
+                  })
+                : wishlistDispatch({
+                    type: "ADD TO WISHLIST",
+                    payload: product,
+                  })
+            }
+          >
+            {isProductInWishlist ? "Remove from wishlist" : "Add to wishlist"}
+          </button>
         </div>
       </div>
     </div>
   );
 }
+
+// // <h3></h3>
+// <h4></h4>
+// <div className="card_price">
+//   <span className="new_price"></span>
+//   <span className="discount_percent"></span>
+//   <span className="orignal_price"></span>
+// </div>//
