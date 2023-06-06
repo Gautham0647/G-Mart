@@ -6,12 +6,12 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart/Cart";
 import WishList from "./pages/WishList/WishList";
 import NavBar from "./components/NavBar";
-import { Footer } from "./components/Footer";
+//import { Footer } from "./components/Footer";
 import ProductListing from "./pages/ProductListing/ProductListing";
 import { SingleProductPage } from "./pages/SingleProductPage";
 import { Login } from "./pages/Login/Login";
 import { useEffect } from "react";
-import {RequiresAuth} from "./components/RequiresAuth/RequiresAuth";
+import { RequiresAuth } from "./components/RequiresAuth/RequiresAuth";
 import { useAuth } from "./Context/AuthContext";
 import { Signup } from "./pages/Signup/Signup";
 
@@ -45,7 +45,6 @@ function App() {
           element={isAuth ? <Navigate to="/" replace /> : <Signup />}
         />
       </Routes>
-      <Footer />
     </>
   );
 }

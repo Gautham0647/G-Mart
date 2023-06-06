@@ -26,7 +26,7 @@ export function SingleProductCard({ product }) {
         <img src={productImage} alt={productName} />
       </div>
       <div className="details">
-        <h1 className="product-name">{productName}</h1>
+        <h1 className="product-details-name">{productName}</h1>
         <p className="rating">
           {rating}
           <StarIcon />

@@ -1,10 +1,14 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
+
 import { useAuth } from "../../Context/AuthContext";
+import { InputTypeOne } from "../../components/Ui/InputTypeOne";
+
+import "./Login.css";
 
 export function Login() {
   const { toggleAuth } = useAuth();
-  const location = useLocation()
-  const navigate = useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const loginHandler = async (e) => {
     e.preventDefault();
@@ -23,7 +27,7 @@ export function Login() {
         localStorage.setItem("storeToken", JSON.stringify(encodedToken));
         console.log(encodedToken);
         toggleAuth();
-        navigate(location?.state?.from?.pathname)
+        navigate(location?.state?.from?.pathname);
       }
     } catch (e) {
       console.error(JSON.stringify(e));
@@ -33,9 +37,11 @@ export function Login() {
   return (
     <main>
       <div className="center">
-        <form onSubmit={loginHandler}>
+        <form onSubmit={loginHandler} className="form flex" method="get">
           <h2 className="h3">Login</h2>
-          <input
+          
+          <InputTypeOne
+          wrapperClassName="form__item form__email form__input_box"
             htmlFor="email"
             labelClassName="label"
             labelText="Email Address"
@@ -45,21 +51,28 @@ export function Login() {
             name="email"
             defaultValue="gautham0647@gmail.com"
           />
+          
 
-          <input
+          <InputTypeOne
+          wrapperClassName="form__item form__password form__input_box"
             htmlFor="password"
             labelClassName="label"
             labelText="Password"
+            
             className="input_box"
             placeholder="********"
             name="password"
             defaultValue="myweb@0647"
           />
-          <section>
-            <button>Forgot your Password?</button>
-          </section>
-          <button>Login</button>
-          <Link to="/signup">New here? Create New Account</Link>
+          
+          <button className="login-btn">Login</button>
+
+          <Link 
+          className="form_signup"
+          to="/signup">
+          
+          
+          New here? Create New Account</Link>
         </form>
       </div>
     </main>

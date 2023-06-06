@@ -1,5 +1,8 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
+import { InputTypeOne } from "../../components/Ui/InputTypeOne";
+import "./Signup.css"
+
 
 export function Signup() {
   const { toggleAuth } = useAuth();
@@ -34,9 +37,10 @@ export function Signup() {
   return (
     <main>
       <div className="center">
-        <form onSubmit={signupHandler}>
+        <form  className="form"   onSubmit={signupHandler}>
           <h2 className="h3">Login</h2>
-          <input
+          <InputTypeOne
+          wrapperClassName="form__item form__first_name form__input_box"
             htmlFor="first_name"
             labelClassName="label"
             labelText="First Name"
@@ -46,17 +50,19 @@ export function Signup() {
             name="firstName"
             defaultValue="Gautham2"
           />
-          <input
+          <InputTypeOne
+          wrapperClassName="form__item form__last_name form__input_box"
             htmlFor="last_name"
             labelClassName="label"
-            labelText="lastName Name"
+            labelText="LastName Name"
             type="text"
             className="input_box"
             placeholder="Doe"
             name="lastName"
             defaultValue="Bairi"
           />
-          <input
+          <InputTypeOne
+          wrapperClassName="form__item form__email form__input_box"
             htmlFor="email"
             labelClassName="label"
             labelText="Email Address"
@@ -67,7 +73,8 @@ export function Signup() {
             defaultValue="gautham@gmail.com"
           />
 
-          <input
+          <InputTypeOne
+          wrapperClassName="form__item form__password form__input_box"
             htmlFor="password"
             labelClassName="label"
             labelText="Password"
@@ -76,8 +83,12 @@ export function Signup() {
             name="password"
             defaultValue="goto"
           />
-          <button>Signup</button>
-          <Link to="/login">Already have an account? Go to Login</Link>
+          <button  
+          className="signup-btn"
+          >Signup</button>
+          <Link 
+          className="form_login"
+          to="/login">Already have an account? Go to Login</Link>
         </form>
       </div>
     </main>

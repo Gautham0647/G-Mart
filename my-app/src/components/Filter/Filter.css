@@ -37,3 +37,6 @@
         width: 100%;
         accent-color: #302aaf;
       }
+      p{
+        text-decoration: none;
+      }

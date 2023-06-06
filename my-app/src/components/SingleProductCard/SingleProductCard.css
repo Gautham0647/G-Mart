@@ -19,7 +19,7 @@
     align-items: center;
   
   }
-  . .product-detail-card .details {
+  .product-detail-card .details {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,11 +29,11 @@
   .product-detail-card .product-name {
     font-size: 20px;
   }
-  .product-name{
-    font-size: 1.25rem;
-    font-weight: var(--semi-bold);
+  .product-details-name{
+    font-size: 2rem;
+    font-weight: bold;
     text-decoration: none;
-    color: var(--primary-color);
+    color: #302aaf;
     cursor: pointer;
   }
 
@@ -43,7 +43,7 @@
 
   .rating{
     font-size: 1.7rem;
-    color: #45c045;
+    color: #ffc800;
     font-weight: 500;
   }
   .price-container {
@@ -59,7 +59,7 @@
   }
 
   .discount {
-    color: #19ae19;
+    color: #ffc800;
   }
 
 

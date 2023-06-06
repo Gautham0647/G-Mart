@@ -1,4 +1,8 @@
-export const initialCartState = [];
+export const initialCartState = [
+  {
+    count: 0,
+  },
+];
 
 export const cartReducer = (state, action) => {
   switch (action.type) {
@@ -34,7 +38,8 @@ export const cartReducer = (state, action) => {
           return product._id !== action.payload;
         }),
       ];
-
+    case "DECREASE":
+      return;
     default:
       return state;
   }

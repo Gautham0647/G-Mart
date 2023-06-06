@@ -1,4 +1,5 @@
 import { useCart } from "../../Context/CartContext";
+//import { PriceCard } from "../PriceCard/PriceCard";
 import "./CartProductCard.css";
 
 export function CartProductCard({ product }) {
@@ -25,6 +26,13 @@ export function CartProductCard({ product }) {
             <span className="discount_percent">{discountPercent}% off</span>
             <span className="orignal_price">₹{orignalPrice}</span>
           </div>
+          <div>
+            <button  
+            onClick={()=>cartDispatch({type : "DECREASE"})}
+            >-</button>
+            {product.count}
+            <button>+</button>
+          </div>
           <div className="cart_footer">
             <button
               onClick={() =>
@@ -36,6 +44,8 @@ export function CartProductCard({ product }) {
           </div>
         </div>
       </div>
+    
+
     </div>
   );
 }
