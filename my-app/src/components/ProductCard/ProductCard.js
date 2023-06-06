@@ -1,12 +1,14 @@
+import { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
-import StarIcon from '@mui/icons-material/Star';
-
+import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
+import StarIcon from "@mui/icons-material/Star";
 import { useCart } from "../../Context/CartContext";
 import { useWishlist } from "../../Context/WishlistContext";
-//import{Link} from "react-router-dom"
 import "./ProductCard.css";
 import { useAuth } from "../../Context/AuthContext";
+import { toast, ToastContainer } from "react-toastify";
+import Spinner from "../Loader";
 
 export function ProductCard({ product }) {
   const { pathname } = useLocation();
@@ -19,7 +21,7 @@ export function ProductCard({ product }) {
     _id,
     productName,
     productImage,
-    orignalPrice,
+    originalPrice,
     price,
     discountPercent,
     rating,
@@ -27,9 +29,11 @@ export function ProductCard({ product }) {
 
   const isProductInCart = cart.find((item) => item._id === product._id);
   const isProductInWishlist = wishlist.find((item) => item._id === product._id);
-
+  const [loader, setLoader] = useState();
   const addToCartHandler = () => {
     // if not logged in navigate to /login
+    setLoader(true);
+    toast("SLDFJGLSDKJFLSDJFl");
     if (!isAuth) return navigate("/login");
 
     // location?
@@ -38,11 +42,13 @@ export function ProductCard({ product }) {
     if (pathname !== "/cart" && isProductInCart) return navigate("/cart");
 
     // else b go to cart
+    setTimeout(() => {
+      setLoader(false);
+    }, 2000);
     return isProductInCart
       ? cartDispatch({ type: "REMOVE-FROM-CART", payload: product._id })
       : cartDispatch({ type: "ADD-TO-CART", payload: product });
   };
-
   const addToCartButtonText = () => {
     if (pathname !== "/cart" && isProductInCart) return "Go to Cart";
     return isProductInCart ? "Remove from Cart" : "Add from Cart";
@@ -50,6 +56,7 @@ export function ProductCard({ product }) {
 
   return (
     <div className="product-wrapper">
+      <ToastContainer />
       <div className="product-header">
         <NavLink to={`/products/${_id}`}>
           <img src={productImage} alt={productName} />
@@ -61,29 +68,44 @@ export function ProductCard({ product }) {
         </p>
         <div className="product-price-wrapper">
           <h3 className="product-discounted-price">₹{price}/-</h3>
-          <h4 className="product-orignal-price">₹{orignalPrice}</h4>
+          <h4 className="product-orignal-price">₹{originalPrice}</h4>
           <div className="product-discount">{discountPercent}% Off</div>
         </div>
       </div>
-      <p className="product-rating">{rating}
-      <StarIcon/>
+      <p className="product-rating">
+        {rating}
+        <StarIcon />
       </p>
       <div className="product-footer">
-        <button className="product-add-to-cart" onClick={addToCartHandler}>
-          {addToCartButtonText()}
-        </button>
-        <FavoriteBorderRoundedIcon
-          onClick={() =>
-            isProductInWishlist
-              ? wishlistDispatch({
-                  type: "REMOVE-FROM-WISHLIST",
-                  payload: product._id,
-                })
-              : wishlistDispatch({ type: "ADD TO WISHLIST", payload: product })
-          }
-          className="heart-icon"
-        />
-        
+        {loader ? (
+          <Spinner className="small-loader"></Spinner>
+        ) : (
+          <button className="product-add-to-cart" onClick={addToCartHandler}>
+            {addToCartButtonText()}
+          </button>
+        )}
+        {isProductInWishlist ? (
+          <FavoriteRoundedIcon
+            onClick={() =>
+              wishlistDispatch({
+                type: "REMOVE-FROM-WISHLIST",
+                payload: product._id,
+              })
+            }
+          />
+        ) : (
+          <FavoriteBorderRoundedIcon
+            onClick={() =>
+              wishlistDispatch({
+                type: "ADD TO WISHLIST",
+                payload: product,
+              })
+            }
+            color="primary"
+            className="heart-icon"
+          />
+        )}
+
         {/* <FavoriteBorderRoundedIcon>
           {isProductInWishlist ? "Remove from wishlist" : "Add to wishlist"}
         </FavoriteBorderRoundedIcon> */}

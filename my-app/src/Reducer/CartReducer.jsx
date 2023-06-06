@@ -1,12 +1,8 @@
-export const initialCartState = [
-  {
-    count: 0,
-  },
-];
+export const initialCartState = [];
 
 export const cartReducer = (state, action) => {
   switch (action.type) {
-    case "ADD-TO-CART":
+    case "ADD-TO-CART": {
       // check if product exists
       const existingProduct = state.find(
         (product) => product._id === action.payload._id
@@ -19,8 +15,13 @@ export const cartReducer = (state, action) => {
         // existingProduct.count = existingProduct.count + 1
         // add existing product with updated count into cart
         return [
-          ...state.filter((product) => product._id !== action.payload._id),
-          { ...existingProduct, count: existingProduct.count + 1 },
+          ...state.map((product) => ({
+            ...product,
+            count:
+              product._id === action.payload._id
+                ? product.count + 1
+                : product.count,
+          })),
         ];
         // return new cart
       } else {
@@ -30,16 +31,31 @@ export const cartReducer = (state, action) => {
         // return new cart
         return [...state, { ...action.payload, count: 1 }];
       }
-    case "REMOVE-FROM-CART":
-      console.log(action.payload);
+    }
+    case "DECREASE-FROM-CART": {
+      // check if product exists
+      return [
+        ...state.map((product) => ({
+          ...product,
+          count:
+            product._id === action.payload._id
+              ? product.count - 1
+              : product.count,
+        })),
+      ];
+      // return [
+      //   ...state.filter((product) => product._id !== action.payload._id),
+      //   { ...action.payload, count: action.payload.count - 1 },
+      // ];
+    }
+    case "REMOVE-FROM-CART": {
       return [
         ...state.filter((product) => {
-          // console.log(product._id, 'map')
           return product._id !== action.payload;
         }),
       ];
-    case "DECREASE":
-      return;
+    }
+
     default:
       return state;
   }

@@ -15,5 +15,19 @@ export const users = [
     password: "myweb@0647",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    addresses: [
+      {
+        name: "Puneet Patel",
+        address: "410, Newyork",
+        phone: "+000121",
+        pinCode: 9211,
+      },
+      {
+        name: "Naveen B",
+        address: "430, Newyork",
+        phone: "+91000121",
+        pinCode: 8211,
+      },
+    ],
   },
 ];

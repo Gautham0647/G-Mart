@@ -7,7 +7,7 @@ export function WishlistCard({ product }) {
     productName,
     productImage,
     price,
-    orignalPrice,
+    originalPrice,
     discountPercent,
     productDescription,
   } = product;
@@ -23,7 +23,7 @@ export function WishlistCard({ product }) {
           <div className="wishlist_price">
             <span className="new_price">{price}</span>
             <span className="discount_percent">{discountPercent}% off</span>
-            <span className="orignal_price">₹{orignalPrice}</span>
+            <span className="orignal_price">₹{originalPrice}</span>
           </div>
           <div className="wishlist_footer">
             <button

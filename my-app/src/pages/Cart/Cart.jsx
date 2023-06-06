@@ -29,7 +29,7 @@ const Cart = () => {
           {cart.map((product) => (
             <CartProductCard product={product} />
           ))}
-          <div>{cart.length > 0 && <PriceCard />}</div>
+          <div>{cart.length > 0 && <PriceCard cart={cart} />}</div>
         </div>
       )}
     </div>

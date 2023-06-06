@@ -19,7 +19,6 @@ export const filterReducer = (state, action) => {
       } else {
         newCategory = [...newCategory, action.payload];
       }
-      //console.log(newCategory);
       return {
         ...state,
         category: newCategory,
@@ -28,18 +27,11 @@ export const filterReducer = (state, action) => {
       return { ...state, sort: action.payload };
 
     case "SEARCH-VALUE":
-        return {...state, search:action.payload};
-        case "CLEAR-FILTERS":
-          return {
-            ...state,
-            priceRange: 15000,
-  category: [],
-  rating: 0,
-  sort: "",
-  search: "",
+      return { ...state, search: action.payload };
 
-          }
-        
+    case "CLEAR-FILTERS":
+      return initialFilter;
+
     default:
       return state;
   }

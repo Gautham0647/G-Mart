@@ -1,8 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import { InputTypeOne } from "../../components/Ui/InputTypeOne";
-import "./Signup.css"
-
+import "./Signup.css";
 
 export function Signup() {
   const { toggleAuth } = useAuth();
@@ -21,11 +20,9 @@ export function Signup() {
         }),
         method: "POST",
       });
-      console.log(response);
       const { encodedToken } = await response.json();
       if (response.status === 201) {
         localStorage.setItem("storeToken", JSON.stringify(encodedToken));
-        console.log(encodedToken);
         toggleAuth();
         navigate(location?.state?.from?.pathname);
       }
@@ -37,10 +34,10 @@ export function Signup() {
   return (
     <main>
       <div className="center">
-        <form  className="form"   onSubmit={signupHandler}>
+        <form className="form" onSubmit={signupHandler}>
           <h2 className="h3">Login</h2>
           <InputTypeOne
-          wrapperClassName="form__item form__first_name form__input_box"
+            wrapperClassName="form__item form__first_name form__input_box"
             htmlFor="first_name"
             labelClassName="label"
             labelText="First Name"
@@ -51,7 +48,7 @@ export function Signup() {
             defaultValue="Gautham2"
           />
           <InputTypeOne
-          wrapperClassName="form__item form__last_name form__input_box"
+            wrapperClassName="form__item form__last_name form__input_box"
             htmlFor="last_name"
             labelClassName="label"
             labelText="LastName Name"
@@ -62,7 +59,7 @@ export function Signup() {
             defaultValue="Bairi"
           />
           <InputTypeOne
-          wrapperClassName="form__item form__email form__input_box"
+            wrapperClassName="form__item form__email form__input_box"
             htmlFor="email"
             labelClassName="label"
             labelText="Email Address"
@@ -74,7 +71,7 @@ export function Signup() {
           />
 
           <InputTypeOne
-          wrapperClassName="form__item form__password form__input_box"
+            wrapperClassName="form__item form__password form__input_box"
             htmlFor="password"
             labelClassName="label"
             labelText="Password"
@@ -83,14 +80,12 @@ export function Signup() {
             name="password"
             defaultValue="goto"
           />
-          <button  
-          className="signup-btn"
-          >Signup</button>
-          <Link 
-          className="form_login"
-          to="/login">Already have an account? Go to Login</Link>
+          <button className="signup-btn">Signup</button>
+          <Link className="form_login" to="/login">
+            Already have an account? Go to Login
+          </Link>
         </form>
       </div>
     </main>
   );
-};
+}

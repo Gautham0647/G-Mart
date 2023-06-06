@@ -3,7 +3,6 @@ export const initialState = {
   categories: [],
   selectedCategory: [],
   searchValue: "",
-
 };
 
 export const dataReducer = (state, action) => {
@@ -12,8 +11,8 @@ export const dataReducer = (state, action) => {
       return { ...state, products: action.payload };
     case "SET_CATEGORIES":
       return { ...state, categories: action.payload };
-      case "SEARCH_VALUE":
-       return { ...state, searchValue:action.payload }
+    case "SEARCH_VALUE":
+      return { ...state, searchValue: action.payload };
     default:
       return { ...state };
   }

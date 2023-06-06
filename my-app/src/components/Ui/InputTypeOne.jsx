@@ -10,6 +10,7 @@ export const InputTypeOne = (props) => {
 		name,
 		onChange,
 		value,
+		defaultValue,
 	} = props;
 	
 	return (
@@ -19,6 +20,7 @@ export const InputTypeOne = (props) => {
 			</label>
 			<input
 				value={value}
+				defaultValue={defaultValue}
 				name={name}
 				type={type}
 				className={className}

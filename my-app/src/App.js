@@ -10,15 +10,13 @@ import NavBar from "./components/NavBar";
 import ProductListing from "./pages/ProductListing/ProductListing";
 import { SingleProductPage } from "./pages/SingleProductPage";
 import { Login } from "./pages/Login/Login";
-import { useEffect } from "react";
 import { RequiresAuth } from "./components/RequiresAuth/RequiresAuth";
 import { useAuth } from "./Context/AuthContext";
 import { Signup } from "./pages/Signup/Signup";
+import { Checkout } from "./pages/Checkout/Checkout";
 
 function App() {
-  useEffect(() => {
-    console.log(JSON.parse(localStorage.getItem("storeToken")));
-  }, []);
+
   const { isAuth } = useAuth();
   return (
     <>
@@ -44,6 +42,11 @@ function App() {
           path="/signup"
           element={isAuth ? <Navigate to="/" replace /> : <Signup />}
         />
+         <Route
+          path="/checkout"
+          element={ <Checkout/>}
+        />
+        
       </Routes>
     </>
   );

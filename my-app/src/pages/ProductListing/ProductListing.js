@@ -5,6 +5,8 @@ import "./ProductListing.css";
 import { useFilter } from "../../Context/FilterContext";
 import { Filter } from "../../components/Filter/Filter";
 //import { filterReducer } from "../../Reducer/FilterReducer";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductListing = () => {
   const { products } = useData();
@@ -15,7 +17,7 @@ const ProductListing = () => {
     let filteredProducts = [...products];
     if (priceRange !== 150000) {
       filteredProducts = filteredProducts.filter(
-        (product) => product.orignalPrice <= priceRange
+        (product) => product.originalPrice <= priceRange
       );
     }
     if (rating > 0) {
@@ -30,18 +32,19 @@ const ProductListing = () => {
     }
     if (sort === "Increase") {
       filteredProducts = [...filteredProducts].sort(
-        (a, b) => a.orignalPrice - b.orignalPrice
+        (a, b) => a.originalPrice - b.originalPrice
       );
     }
     if (sort === "Decrease") {
       filteredProducts = [...filteredProducts].sort(
-        (a, b) => b.orignalPrice - a.orignalPrice
+        (a, b) => b.originalPrice - a.originalPrice
       );
     }
     if (search.length > 0) {
-      filteredProducts = filteredProducts.filter((product) =>
-        product.productName.toLowerCase().includes(search.toLowerCase() )||
-        product.categoryName.toLowerCase().includes(search.toLowerCase())
+      filteredProducts = filteredProducts.filter(
+        (product) =>
+          product.productName.toLowerCase().includes(search.toLowerCase()) ||
+          product.categoryName.toLowerCase().includes(search.toLowerCase())
       );
     }
 
@@ -51,11 +54,10 @@ const ProductListing = () => {
 
   return (
     <div className="product-container">
-     
-     <Filter/>
+      <Filter />
 
       <div className="product-list-container">
-      <h1>
+        <h1>
           Showing All Products
           <span> ({filteredProducts.length} products)</span>
         </h1>
@@ -72,6 +74,7 @@ const ProductListing = () => {
           })}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

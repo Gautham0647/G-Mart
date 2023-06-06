@@ -12,7 +12,7 @@ export function SingleProductCard({ product }) {
     productName,
     productImage,
     price,
-    orignalPrice,
+    originalPrice,
     discountPercent,
     productDescription,
     rating,
@@ -34,7 +34,7 @@ export function SingleProductCard({ product }) {
         <p className="description">{productDescription}</p>
         <div className="price-container">
           <p>₹{price}</p>
-          <p className="original-price">{orignalPrice}</p>
+          <p className="original-price">{originalPrice}</p>
           <p className="discount">{discountPercent}% off</p>
         </div>
 

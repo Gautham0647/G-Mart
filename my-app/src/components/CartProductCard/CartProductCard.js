@@ -8,7 +8,7 @@ export function CartProductCard({ product }) {
     productName,
     productImage,
     price,
-    orignalPrice,
+    originalPrice,
     discountPercent,
     productDescription,
   } = product;
@@ -24,14 +24,25 @@ export function CartProductCard({ product }) {
           <div className="card_price">
             <span className="new_price">{price}</span>
             <span className="discount_percent">{discountPercent}% off</span>
-            <span className="orignal_price">₹{orignalPrice}</span>
+            <span className="orignal_price">₹{originalPrice}</span>
           </div>
           <div>
-            <button  
-            onClick={()=>cartDispatch({type : "DECREASE"})}
-            >-</button>
+            <button
+              onClick={() =>
+                cartDispatch({ type: "DECREASE-FROM-CART", payload: product })
+              }
+              disabled={product.count <= 1}
+            >
+              -
+            </button>
             {product.count}
-            <button>+</button>
+            <button
+              onClick={() =>
+                cartDispatch({ type: "ADD-TO-CART", payload: product })
+              }
+            >
+              +
+            </button>
           </div>
           <div className="cart_footer">
             <button
@@ -44,8 +55,6 @@ export function CartProductCard({ product }) {
           </div>
         </div>
       </div>
-    
-
     </div>
   );
 }

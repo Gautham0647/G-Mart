@@ -12,7 +12,6 @@ export function SingleProductPage() {
     try {
       const productResponse = await fetch(`/api/products/${productId}`);
       const { product } = await productResponse.json();
-      console.log(product)
       if (productResponse.status === 200) {
         setSelectedProduct(product)
       }
@@ -23,7 +22,6 @@ export function SingleProductPage() {
 
   useEffect(() => {
     getProduct();
-    console.log(selectedProduct)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId]);
 

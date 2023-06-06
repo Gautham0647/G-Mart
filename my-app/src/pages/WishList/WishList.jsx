@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import "./Wishlist.css";
 import { useWishlist } from "../../Context/WishlistContext";
 import { WishlistCard } from "../../components/WishlistCard/WishlistCard";
+import Spinner from "../../components/Loader";
 
 const WishList = () => {
   const { wishlist } = useWishlist();
-  console.log(wishlist);
   const isWishlistEmpty = wishlist.length === 0;
 
   return (
@@ -16,6 +16,9 @@ const WishList = () => {
         My Wishlist
         <span>{wishlist.length ? `(${wishlist.length})` : null}</span>
       </h1>
+      <div className="pos-center">
+        <Spinner />
+      </div>
       {isWishlistEmpty ? (
         <div className="empty-wishlist">
           <p>Your wishlist is empty!.</p>

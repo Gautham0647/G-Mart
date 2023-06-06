@@ -12,7 +12,6 @@ export function Login() {
 
   const loginHandler = async (e) => {
     e.preventDefault();
-    console.log(e.target.email.value);
     try {
       const response = await fetch("/api/auth/login", {
         body: JSON.stringify({
@@ -21,11 +20,9 @@ export function Login() {
         }),
         method: "POST",
       });
-      console.log(response);
       const { encodedToken } = await response.json();
       if (response.status === 200) {
         localStorage.setItem("storeToken", JSON.stringify(encodedToken));
-        console.log(encodedToken);
         toggleAuth();
         navigate(location?.state?.from?.pathname);
       }
