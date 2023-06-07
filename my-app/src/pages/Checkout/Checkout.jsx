@@ -1,8 +1,11 @@
+import {Link, useNavigate} from "react-router-dom";
+import "./Checkout.css"
 import { useAddress } from "../../Context/AddressContext";
 import { useCart } from "../../Context/CartContext";
 
 export function Checkout() {
-  const { cart } = useCart();
+  const { cart ,cartDispatch } = useCart();
+  const navigate = useNavigate();
   const {
     addressState: something,
     addressDispatch,
@@ -20,20 +23,33 @@ export function Checkout() {
   );
   const totalDiscountedPrice = totalOriginalPrice - totalDiscount;
   console.log(addresses)
-  return (
-    <div>
-      <h1>Checkout</h1>
+
+const placeOrderHandler=()=>{
+  cartDispatch({type: "ORDER-DETAIL",payload:cart});
+  cartDispatch({type:"ORDER-PRICES", payload:{totalDiscountedPrice}});
+  cartDispatch({type:"ORDER-ADDRESS" ,payload:selectedAddress})
+
+
+  return navigate("./orderSumary")
+}
+
+  return (<div className="checkout-page-container" >
+      <h1 className="checkout_heading">Checkout</h1>
+    <div  className="checkout_layout">
       <div className="checkout-details-left">
         <div className="address-wrapper">
           {addresses.map((address, index) => {
             const { name, address: areaAddress, phone, pinCode } = address;
             return (
-              <label htmlFor={pinCode}>
+              <label 
+               className="address"
+              htmlFor={pinCode}>
                 <h2>{name}</h2>
                 <p>{areaAddress}</p>
                 <p>{pinCode}</p>
                 <p>{phone}</p>
                 <input
+                 
                   id={pinCode}
                   type="radio"
                   className="address"
@@ -49,44 +65,65 @@ export function Checkout() {
         </div>
       </div>
       <div className="checkout-details-right">
-        <div>
-          <h2 className="price-heading">Order Details</h2>
+        <div  >
+          <h2 className="checkout-price-heading">Order Details</h2>
+          <div className="checkout-details">
+            <p>Item</p>
+            <p>Quantity</p>
+          </div>
           {cart.map(({ productName, count }, index) => {
             return (
-              <div key={index}>
-                <h3>{productName}</h3>
-                <p>{count}</p>
+              <div 
+              className="checkout-details"
+              key={index}>
+                <h3> {productName}</h3>
+                <p>  {count}</p>
               </div>
             );
           })}
         </div>
         <div>
-          <h2 className="price-heading">Price Details</h2>
-          <div>
-            <p>Price ( no. of items )</p>
+          <h2 className="checkout-price-heading">Price Details</h2>
+          <div className="checkout-details">
+            <p>Price ( {cart.length} )</p>
             <p>INR {totalOriginalPrice}</p>
           </div>
-          <div>
+          <div className="checkout-details">
             <p>Discount</p>
             <p>- INR {totalDiscount}</p>
           </div>
-          <div>
+          <div className="checkout-details">
             <p>Delivery Charges</p>
             <p>Free</p>
           </div>
 
-          <div>
+          <div className="check_price_total">
             <p>Total Amount</p>
             <p>{totalDiscountedPrice}</p>
           </div>
+          <div >
+        <p className="checkout-summary-text">
+          You will save INR {totalDiscount} on this order
+        </p>
+        </div>
+          
         </div>
         <div className="selected-address">
+        <h2 className="checkout-price-heading">DELIVERY TO</h2>
           <h2>{selectedAddress.name}</h2>
-          <p>{selectedAddress.address}</p>
-          <p>{selectedAddress.pinCode}</p>
-          <p>{selectedAddress.phone}</p>
+          <p>Address: {selectedAddress.address}</p>
+          <p> Pin Code: {selectedAddress.pinCode}</p>
+          <p> Phone.No: {selectedAddress.phone}</p>
+        </div>
+        <div className="order-btn" >
+          <Link
+          onClick={placeOrderHandler}
+          to="/orderSummary"
+          className="place-order-btn"
+          >Place Order</Link>
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -54,7 +54,7 @@ export function AddressProvider({ children }) {
 
   useEffect(() => {
     getAddresses();
-  }, []);
+  }, );
 
   return (
     <AddressContext.Provider value={{ addressState, addressDispatch }}>

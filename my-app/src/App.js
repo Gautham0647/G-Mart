@@ -14,6 +14,7 @@ import { RequiresAuth } from "./components/RequiresAuth/RequiresAuth";
 import { useAuth } from "./Context/AuthContext";
 import { Signup } from "./pages/Signup/Signup";
 import { Checkout } from "./pages/Checkout/Checkout";
+import { OrderSummary } from "./pages/OrderSummary/OrderSummary";
 
 function App() {
 
@@ -45,6 +46,10 @@ function App() {
          <Route
           path="/checkout"
           element={ <Checkout/>}
+        />
+        <Route
+          path="/orderSummary"
+          element={ <OrderSummary/>}
         />
         
       </Routes>

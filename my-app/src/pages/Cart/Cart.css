@@ -14,3 +14,16 @@ h1{
   text-align: center;
 
 }
+.cart_layout{
+  display: flex;
+ flex-direction: row;
+  grid-gap: 10rem;
+  gap: 10rem;
+  margin: 3rem 0;
+  
+}
+
+.price_layout{
+  display: grid;
+  justify-self: end;
+}

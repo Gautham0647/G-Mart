@@ -1,9 +1,9 @@
 .priceCard-Container{
     box-shadow: 0 1px 10px 2px #cac7c7;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     border-radius: 10px;
-    width: 50vw;
+    width: 30vw;
      padding: 2rem;
     position: sticky;
     top: 20%;
@@ -18,4 +18,34 @@
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
     padding: .5rem;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.price_total{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.summary-text{
+    color: #31c131;
+ text-align: center;
+}
+
+.checkout_btn{
+    align-self: center;
+   width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #403aef;
+    color: white;
+    text-decoration: none;
 }

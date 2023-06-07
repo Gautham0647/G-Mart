@@ -47,7 +47,7 @@ function NavBar() {
     <nav className="navbar">
       <div className="logo-container">
         <NavLink to="/" className="logo-link">
-          FragrancesX
+          AromaCart
         </NavLink>
       </div>
         <div className="input-container">
@@ -68,7 +68,7 @@ function NavBar() {
 
         <li className="nav-item">
           <NavLink to="/products" style={navStyle}>
-            <ShoppingBagOutlinedIcon />
+            <ShoppingBagOutlinedIcon  />
             <span className="link-text">Products</span>
           </NavLink>
         </li>
