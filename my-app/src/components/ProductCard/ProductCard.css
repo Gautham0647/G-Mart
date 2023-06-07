@@ -1,6 +1,5 @@
 .product-wrapper {
   position: relative;
-  /* width: 300px; */
   width: 23vw;
   border: 2px solid #524be2;
   box-shadow: 0 1px 10px 2px #cac7c7;
@@ -10,7 +9,6 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 0.75rem;
-  
 }
 .product-wrapper:hover {
   transform: scale(1.02);
@@ -18,23 +16,24 @@
 
 .product-wrapper .heart-icon {
   align-self: flex-end;
-  font-size:30px;
+  font-size: 30px;
   color: black;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .product-wrapper .heart-icon:hover {
-  color: red
+  color: red;
 }
 
-
-
+.product-wrapper .heart-icon.icon-red {
+  color: red;
+}
 
 .product-header img {
   width: 300px;
   height: 350px;
-  object-fit: contain; 
-  
+  object-fit: contain;
+
   overflow: clip;
 }
 
@@ -52,20 +51,17 @@
   cursor: pointer;
 }
 
-
 .product-price-wrapper {
   display: flex;
   justify-content: center;
   gap: 8px;
   height: 35%;
-  
 }
-
 
 .product-discounted-price {
   margin: 0;
 }
-.product-orignal-price{
+.product-orignal-price {
   color: #adaaaa;
   text-decoration: line-through;
   font-size: 15px;
@@ -85,13 +81,12 @@
   justify-content: center;
   margin-bottom: 8px;
   margin-top: 8px;
- 
 }
 
 .product-footer button {
   cursor: pointer;
   padding: 4px 25px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 16px;
   text-align: center;
   text-decoration: none;
@@ -99,10 +94,7 @@
   color: white;
   background-color: #302aaf;
   box-shadow: 0 1px 10px 2px #db5a3d;
-  
 }
-
-
 
 .product-rating {
   position: absolute;

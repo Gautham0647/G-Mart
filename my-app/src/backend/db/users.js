@@ -18,13 +18,13 @@ export const users = [
     addresses: [
       {
         name: "Puneet Patel",
-        address: "410, Newyork",
+        address: "Kids Park, Londonderry NSW 2753, Australia",
         phone: "+000121",
         pinCode: 9211,
       },
       {
         name: "Naveen B",
-        address: "430, Newyork",
+        address: "Barringhum Lounge, Coogee NSW 2034, Australia",
         phone: "+91000121",
         pinCode: 8211,
       },

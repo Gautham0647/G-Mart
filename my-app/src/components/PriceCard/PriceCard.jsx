@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import "./PriceCard.css";
 export function PriceCard({ cart }) {
-  // product.count
-  // product.originalPrice
   const totalOriginalPrice = cart.reduce(
     (acc, { count, originalPrice }) => acc + originalPrice * count,
     0

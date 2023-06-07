@@ -39,7 +39,6 @@ export function AddressProvider({ children }) {
           authorization: token,
         },
       });
-      console.log(response);
       const { addresses } = await response.json();
       if (response.status === 200) {
         addressDispatch({
@@ -54,7 +53,8 @@ export function AddressProvider({ children }) {
 
   useEffect(() => {
     getAddresses();
-  }, );
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <AddressContext.Provider value={{ addressState, addressDispatch }}>

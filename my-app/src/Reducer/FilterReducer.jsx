@@ -1,3 +1,4 @@
+
 export const initialFilter = {
   priceRange: 15000,
   category: [],
@@ -23,6 +24,9 @@ export const filterReducer = (state, action) => {
         ...state,
         category: newCategory,
       };
+    case "SELECT-CATEGORY":
+      console.log({ ...initialFilter, category: [action.payload] });
+      return { ...initialFilter, category: [action.payload] };
     case "SORT-BY-PRICE":
       return { ...state, sort: action.payload };
 

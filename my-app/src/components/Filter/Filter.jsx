@@ -61,9 +61,9 @@ export function Filter() {
         <input
           type="checkbox"
           onClick={() =>
-            filterDispatch({ type: "CATEGORY", payload: "Deodorant" })
+            filterDispatch({ type: "CATEGORY", payload: "Deodorants" })
           }
-          checked={filterState.category.includes("Deodorant")}
+          checked={filterState.category.includes("Deodorants")}
         />
         Deodorant
       </label>

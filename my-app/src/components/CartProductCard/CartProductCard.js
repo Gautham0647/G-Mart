@@ -1,6 +1,6 @@
 import { useCart } from "../../Context/CartContext";
-//import { PriceCard } from "../PriceCard/PriceCard";
 import "./CartProductCard.css";
+import { toast } from "react-toastify";
 
 export function CartProductCard({ product }) {
   const { cartDispatch } = useCart();
@@ -26,11 +26,16 @@ export function CartProductCard({ product }) {
             <span className="discount_percent">{discountPercent}% off</span>
             <span className="orignal_price">₹{originalPrice}</span>
           </div>
-          <div>
+          <div className="quantity-actions">
             <button
-              onClick={() =>
-                cartDispatch({ type: "DECREASE-FROM-CART", payload: product })
-              }
+              onClick={() => {
+                toast.success("Item removed");
+
+                return cartDispatch({
+                  type: "DECREASE-FROM-CART",
+                  payload: product,
+                });
+              }}
               disabled={product.count <= 1}
             >
               -
@@ -46,9 +51,14 @@ export function CartProductCard({ product }) {
           </div>
           <div className="cart_footer">
             <button
-              onClick={() =>
-                cartDispatch({ type: "REMOVE-FROM-CART", payload: product._id })
-              }
+              onClick={() => {
+                toast.success("Cart Emptied");
+
+                return cartDispatch({
+                  type: "REMOVE-FROM-CART",
+                  payload: product._id,
+                });
+              }}
             >
               Remove from cart
             </button>

@@ -44,7 +44,7 @@ export const products = [
     productDescription: "Oriental Perfume 150ML For Unisex",
     productImage:
       "https://in.ajmalperfume.com/cdn/shop/products/ASCEND_DEODORANT_150ML_1.jpg?v=1668515844",
-    categoryName: "Deodorant ",
+    categoryName: "Deodorants",
     price: 240,
     discountPercent: 20,
     originalPrice: 300,
@@ -136,7 +136,7 @@ export const products = [
     productDescription: "Carbon Perfume Deodorant 200ml For Men",
     productImage:
       "https://in.ajmalperfume.com/cdn/shop/products/Carbon1_c02c5069-27a3-4a37-bf1b-5d9ca0482229.jpg?v=1637739391",
-    categoryName: "Deodorant",
+    categoryName: "Deodorants",
     price: 171,
     discountPercent: 5,
     originalPrice: 180,
@@ -198,7 +198,7 @@ export const products = [
       "Jasmine and Honeysuckle; middle note is Tuberose; base notes are Damask Rose and Orris.",
     productImage:
       "https://cdn.shopify.com/s/files/1/0305/1601/9337/products/132644_img-2196-gucci-bloom-ambrosia-di-fiori_720_1024x1024.jpg?v=1650794859",
-    categoryName: "Deodorant",
+    categoryName: "Deodorants",
     price: 4500,
     discountPercent: 10,
     originalPrice: 5000,
@@ -213,7 +213,7 @@ export const products = [
     productDescription: "Jaguar Classic Chromite Eau de Toilette (100ml)",
     productImage:
       "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/jaguar/952671/0/WjVToRZiKA-s8Yl8f3Iv8-1.png?dpr=1",
-    categoryName: "Deodorant",
+    categoryName: "Deodorants",
     price: 10800,
     discountPercent: 10,
     originalPrice: 12000,
@@ -258,7 +258,7 @@ export const products = [
     productDescription: "Missoni Perfumed Deodorant (50ml) ",
     productImage:
       "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/missoni/1066826/0/ke3HghDRY7-aHiCFP5-N-8011003832835_1.jpg?dpr=1",
-    categoryName: "Deodorant",
+    categoryName: "Deodorants",
     price: 1900,
     discountPercent: 5,
     originalPrice: 2000,
@@ -273,7 +273,7 @@ export const products = [
     productDescription: "Jaguar Classic Chromite Eau de Toilette (100ml)",
     productImage:
       "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/jaguar/952671/0/WjVToRZiKA-s8Yl8f3Iv8-1.png?dpr=1",
-    categoryName: "Deodorant",
+    categoryName: "Deodorants",
     price: 10800,
     discountPercent: 10,
     originalPrice: 12000,
@@ -289,7 +289,7 @@ export const products = [
       "Jasmine and Honeysuckle; middle note is Tuberose; base notes are Damask Rose and Orris.",
     productImage:
       "https://cdn.shopify.com/s/files/1/0305/1601/9337/products/132644_img-2196-gucci-bloom-ambrosia-di-fiori_720_1024x1024.jpg?v=1650794859",
-    categoryName: "Deodorant",
+    categoryName: "Deodorants",
     price: 4500,
     discountPercent: 10,
     originalPrice: 5000,
@@ -304,7 +304,7 @@ export const products = [
     productDescription: "Carbon Perfume Deodorant 200ml For Men",
     productImage:
       "https://in.ajmalperfume.com/cdn/shop/products/Carbon1_c02c5069-27a3-4a37-bf1b-5d9ca0482229.jpg?v=1637739391",
-    categoryName: "Deodorant",
+    categoryName: "Deodorants",
     price: 171,
     discountPercent: 5,
     originalPrice: 180,

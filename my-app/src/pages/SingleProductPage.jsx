@@ -1,8 +1,6 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import { SingleProductCard } from "../components/SingleProductCard/SingleProductCard";
-//import { ProductCard } from "../components/ProductCard/ProductCard";
-//import { CartProductCard } from "../components/CartProductCard/CartProductCard";
 
 export function SingleProductPage() {
   const [selectedProduct, setSelectedProduct] = useState({});
@@ -13,7 +11,7 @@ export function SingleProductPage() {
       const productResponse = await fetch(`/api/products/${productId}`);
       const { product } = await productResponse.json();
       if (productResponse.status === 200) {
-        setSelectedProduct(product)
+        setSelectedProduct(product);
       }
     } catch (e) {
       console.log(e);
@@ -22,7 +20,7 @@ export function SingleProductPage() {
 
   useEffect(() => {
     getProduct();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId]);
 
   return (

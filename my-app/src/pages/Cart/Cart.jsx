@@ -11,7 +11,6 @@ const Cart = () => {
   const isCartEmpty = cart.length === 0;
   return (
     <div className="cart-container">
-    
       <h1>
         My Cart
         <span>{cart.length ? `(${cart.length})` : null}</span>
@@ -25,15 +24,20 @@ const Cart = () => {
             </Link>
           </p>
         </div>
-      ) :  (
-        <div className="cart_layout">
-          {cart.map((product) => (
-            <CartProductCard product={product} />
-          ))}
-          <div className="price_layout">{cart.length > 0 && <PriceCard cart={cart} />}</div>
-        </div>
+      ) : (
+        <>
+          <div className="cart_layout">
+            <div className="product_cart_wrapper">
+              {cart.map((product) => (
+                <CartProductCard product={product} />
+              ))}
+            </div>
+            <div className="price_layout">
+              {cart.length > 0 && <PriceCard cart={cart} />}
+            </div>
+          </div>
+        </>
       )}
-          
     </div>
   );
 };

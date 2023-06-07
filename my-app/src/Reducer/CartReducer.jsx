@@ -56,15 +56,6 @@ export const cartReducer = (state, action) => {
       ];
     }
 
-    case "ORDER-DETAIL":
-      return {
-        ...state,
-        orderSummary: {
-          ...state.orderSummary,
-          items: action.payload,
-        },
-      };
-
     default:
       return state;
   }

@@ -7,7 +7,7 @@ import { useCart } from "../../Context/CartContext";
 import { useWishlist } from "../../Context/WishlistContext";
 import "./ProductCard.css";
 import { useAuth } from "../../Context/AuthContext";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import Spinner from "../Loader";
 
 export function ProductCard({ product }) {
@@ -33,7 +33,6 @@ export function ProductCard({ product }) {
   const addToCartHandler = () => {
     // if not logged in navigate to /login
     setLoader(true);
-    toast("SLDFJGLSDKJFLSDJFl");
     if (!isAuth) return navigate("/login");
 
     // location?
@@ -44,19 +43,19 @@ export function ProductCard({ product }) {
     // else b go to cart
     setTimeout(() => {
       setLoader(false);
-    }, 2000);
+    }, 200);
+    toast.success("Product Added to Cart");
     return isProductInCart
       ? cartDispatch({ type: "REMOVE-FROM-CART", payload: product._id })
       : cartDispatch({ type: "ADD-TO-CART", payload: product });
   };
   const addToCartButtonText = () => {
     if (pathname !== "/cart" && isProductInCart) return "Go to Cart";
-    return isProductInCart ? "Remove from Cart" : "Add from Cart";
+    return isProductInCart ? "Remove from Cart" : "Add to Cart";
   };
 
   return (
     <div className="product-wrapper">
-      <ToastContainer />
       <div className="product-header">
         <NavLink to={`/products/${_id}`}>
           <img src={productImage} alt={productName} />
@@ -86,30 +85,31 @@ export function ProductCard({ product }) {
         )}
         {isProductInWishlist ? (
           <FavoriteRoundedIcon
-            onClick={() =>
-              wishlistDispatch({
+            onClick={() => {
+              toast.success("Product Removed from Wishlist");
+
+              return wishlistDispatch({
                 type: "REMOVE-FROM-WISHLIST",
                 payload: product._id,
-              })
-            }
+              });
+            }}
+            color="primary"
+            className="heart-icon icon-red"
           />
         ) : (
           <FavoriteBorderRoundedIcon
-            onClick={() =>
-              wishlistDispatch({
+            onClick={() => {
+              toast.success("Product Added to Wishlist");
+
+              return wishlistDispatch({
                 type: "ADD TO WISHLIST",
                 payload: product,
-              })
-            }
+              });
+            }}
             color="primary"
             className="heart-icon"
           />
         )}
-
-        {/* <FavoriteBorderRoundedIcon>
-          {isProductInWishlist ? "Remove from wishlist" : "Add to wishlist"}
-        </FavoriteBorderRoundedIcon> */}
-        {/* <h1>{product.count}</h1> */}
       </div>
     </div>
   );

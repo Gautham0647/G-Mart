@@ -6,7 +6,7 @@ import { useFilter } from "../../Context/FilterContext";
 import { Filter } from "../../components/Filter/Filter";
 //import { filterReducer } from "../../Reducer/FilterReducer";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductListing = () => {
   const { products } = useData();
@@ -55,10 +55,9 @@ const ProductListing = () => {
   return (
     <div className="product-container">
       <Filter />
-
       <div className="product-list-container">
         <h1>
-          Showing All Products
+          Product List
           <span> ({filteredProducts.length} products)</span>
         </h1>
         <div className="products-card-container">

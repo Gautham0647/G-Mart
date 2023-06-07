@@ -1,13 +1,15 @@
 import { useData } from "../../Context/DataContext";
 import { Link } from "react-router-dom";
 import "./CategoryCard.css"
+import { useFilter } from "../../Context/FilterContext";
 
 export function CategoryCard() {
-  const { categories, dataDispatch } = useData();
-
+  const { categories } = useData();
+  const { filterDispatch } = useFilter()
+  console.log(categories)
   const handleClick = (categoryName) => {
     document.documentElement.scrollTop = 0;
-    dataDispatch({ type: "CATEGORIES", payload: categoryName });
+    filterDispatch({ type: "SELECT-CATEGORY", payload: categoryName });
   };
   return (
     <div className="categories__card__container">
