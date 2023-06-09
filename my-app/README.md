@@ -8,8 +8,10 @@ https://aromacart.netlify.app/
 
 How to install and run locally?
 
-`git clone https://github.com/arjunrajput18/speedyBuyWeb.git
-cd ElectronicsCentral
+`git clone : https://github.com/Gautham0647/G-Mart
+cd Aroma Cart
 npm install
-npm start
+npm start`
+
+
 
