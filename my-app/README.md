@@ -8,24 +8,19 @@ This folder contains the Mock Backend created for E-Commerce App. It contains di
 
 https://aromacart.netlify.app/
 
+# How to install and run locally?
 
-# How to install and run locally? # 
-
-` git clone : https://github.com/Gautham0647/G-Mart
+`git clone : https://github.com/Gautham0647/G-Mart
 cd Aroma Cart
 npm install
-npm start `
+npm start`
 
-## Features ## 
-* Home Page
-* Product Listing Page
-* Single Product Page
-* Filters by
-* Price
-* Category
-* Ratings
+## Features
 
-
-
-
-
+- Home Page
+- Product Listing Page
+- Single Product Page
+- Filters by
+- Price
+- Category
+- Ratings
