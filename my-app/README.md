@@ -8,37 +8,8 @@ https://aromacart.netlify.app/
 
 How to install and run locally?
 
-```git clone https://github.com/arjunrajput18/speedyBuyWeb.git
+`git clone https://github.com/arjunrajput18/speedyBuyWeb.git
 cd ElectronicsCentral
 npm install
-npm start```
-
-
-#Features
-Home Page
-*Product Listing Page
-Single Product Page
-Filters by
-Price
-Category
-Ratings
-Wishlist Management
-Cart Management
-Search
-Loading & Alerts
-Authentication
-Sign-up
-Login
-Logout
-Address Management
-Checkout
-Logo
-Created by me on Canva
-
-Built with
-ReactJS
-React: useContext and useReducer
-React Router v6
-Vanilla CSS
-MockBee for backend
+npm start
 
