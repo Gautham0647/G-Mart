@@ -13,5 +13,10 @@ cd Aroma Cart
 npm install
 npm start`
 
+#Features
+
+*Home Page
+
+
 
 
