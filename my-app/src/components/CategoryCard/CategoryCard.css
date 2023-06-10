@@ -15,14 +15,15 @@
   }
   
   .category__img__container {
-   
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    border: 2px solid #21165e;
     width: 100%;
     height: 100%;
+    padding-bottom: 100%; 
     border-radius: 5px;
     object-fit: cover;
+    
+   
     
   }
   
