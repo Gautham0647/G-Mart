@@ -33,7 +33,14 @@ function App() {
             </RequiresAuth>
           }
         />
-        <Route path="/wishlist" element={<WishList />} />
+        <Route
+          path="/wishlist"
+          element={
+            <RequiresAuth>
+              <WishList />
+            </RequiresAuth>
+          }
+        />
         <Route path="/products/:productId" element={<SingleProductPage />} />
         <Route
           path="/login"

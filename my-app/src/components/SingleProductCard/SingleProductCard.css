@@ -1,4 +1,149 @@
-@media(min-width:1024px) {
+.single_product_wapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  
+}
+
+
+
+.single_item{
+  background-color: #eef1f4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding-right: 8px;
+  padding-left: 2px;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 10px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.singlePage_img img{
+  width: 250px;
+  /* flex-shrink: 1;
+  flex-grow: 1; */
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  object-fit: contain;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.singlePage_img :hover{
+  scale: 1.015;
+}
+
+.single_item_contain{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 50%;
+  margin-left: 10px;
+}
+
+h3 {
+  display: flex;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 20px;
+  margin-inline-end: 0px;
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: #302aaf;
+}
+
+h4 {
+  display: flex;
+  font-size: 1em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 20px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin-top: 4px;
+  color: #302aaf;
+}
+
+.single_price_container{
+  font-family: "Noto Sans", sans-serif;
+  display: block;
+  margin-inline-start: 20px;
+}
+
+.single_new_price {
+  color: rgb(22, 163, 74);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.single_new_price::before {
+  content: "₹";
+}
+
+.single_discount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0px 10px;
+}
+
+.single_original_price {
+  color: rgb(164, 164, 164);
+  font-style: italic;
+  text-decoration: line-through;
+  font-size: 1.8rem;
+}
+
+.rating{
+  margin-left: 20px;
+  color: yellow;
+  font-size: 20px;
+
+}
+
+.rating svg{
+  font-size: 20px;
+}
+.rating svg:hover{
+  font-size: 25px;
+  color: yellow;
+  cursor: pointer;
+}
+.singlePage_footer{
+  display: flex;
+  /* justify-content: last baselin; */
+  gap: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-left: 20px;
+  flex-direction: row;
+}
+
+.singlePage_footer button {
+  cursor: pointer;
+  padding: 4px 12px;
+  font-size: 16px;
+  background-color: #302aaf;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media(min-width:1024px) {
     .product-detail-card{
         width: 50vw;
         flex-direction: row;
@@ -98,4 +243,4 @@
     background-color:#302aaf ;
     color:white;
   
-  } 
+  }  */

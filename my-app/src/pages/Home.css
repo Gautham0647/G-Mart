@@ -1,9 +1,12 @@
+
+
+
 .section-Category{
     display: flex;
 	flex-flow: column nowrap;
 	padding: 2rem 10rem;
 	gap: 3rem;
-	grid-area: main;
+	background-color:#e5e3f5
 }
 
 

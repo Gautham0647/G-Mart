@@ -61,11 +61,11 @@ export const OrderSummary = () => {
                     </div>
                     <div className="details">
                       <p>Quantity: </p>
-                      <p>{count}</p>
+                      <p>{count} Nos.</p>
                     </div>
                     <div className="details">
                       <p>Price: </p>
-                      <p>{price}</p>
+                      <p>₹{price}</p>
                     </div>
                   </div>
                 </div>

@@ -24,7 +24,7 @@ export function CartProductCard({ product }) {
           <div className="card_price">
             <span className="new_price">{price}</span>
             <span className="discount_percent">{discountPercent}% off</span>
-            <span className="orignal_price">₹{originalPrice}</span>
+            <span className="original_price">₹{originalPrice}</span>
           </div>
           <div className="quantity-actions">
             <button

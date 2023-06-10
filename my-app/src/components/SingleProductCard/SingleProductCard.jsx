@@ -21,51 +21,53 @@ export function SingleProductCard({ product }) {
   const isProductInCart = cart.find((item) => item._id === product._id);
   const isProductInWishlist = wishlist.find((item) => item._id === product._id);
   return (
-    <div className="product-detail-card">
-      <div className="singlePage_img">
-        <img src={productImage} alt={productName} />
-      </div>
-      <div className="details">
-        <h1 className="product-details-name">{productName}</h1>
-        <p className="rating">
-          {rating}
-          <StarIcon />
-        </p>
-        <p className="description">{productDescription}</p>
-        <div className="price-container">
-          <p>₹{price}</p>
-          <p className="original-price">{originalPrice}</p>
-          <p className="discount">{discountPercent}% off</p>
+    <div className="single_product_wapper" >
+      <div  className="single_item">
+        <div className="singlePage_img">
+          <img src={productImage} alt={productName} />
         </div>
+        <div className="single_item_contain">
+          <h3 className="product-details-name">{productName}</h3>
+          <h4 className="description">{productDescription}</h4>
+          <p className="rating">
+            {rating}
+            <StarIcon />
+          </p>
+          <div className="single_price_container">
+            <span className="single_new_price">{price}</span>
+            <span className="single_discount">{discountPercent}% off</span>
+            <span className="single_original_price">{originalPrice}</span>
+          </div>
 
-        <div className="singlePage_footer">
-          <button
-            onClick={() =>
-              isProductInCart
-                ? cartDispatch({
-                    type: "REMOVE-FROM-CART",
-                    payload: product._id,
-                  })
-                : cartDispatch({ type: "ADD-TO-CART", payload: product })
-            }
-          >
-            {isProductInCart ? "GO to Cart" : "Add to Cart"}
-          </button>
-          <button
-            onClick={() =>
-              isProductInWishlist
-                ? wishlistDispatch({
-                    type: "REMOVE-FROM-WISHLIST",
-                    payload: product._id,
-                  })
-                : wishlistDispatch({
-                    type: "ADD TO WISHLIST",
-                    payload: product,
-                  })
-            }
-          >
-            {isProductInWishlist ? "Remove from wishlist" : "Add to wishlist"}
-          </button>
+          <div className="singlePage_footer">
+            <button
+              onClick={() =>
+                isProductInCart
+                  ? cartDispatch({
+                      type: "REMOVE-FROM-CART",
+                      payload: product._id,
+                    })
+                  : cartDispatch({ type: "ADD-TO-CART", payload: product })
+              }
+            >
+              {isProductInCart ? "GO to Cart" : "Add to Cart"}
+            </button>
+            <button
+              onClick={() =>
+                isProductInWishlist
+                  ? wishlistDispatch({
+                      type: "REMOVE-FROM-WISHLIST",
+                      payload: product._id,
+                    })
+                  : wishlistDispatch({
+                      type: "ADD TO WISHLIST",
+                      payload: product,
+                    })
+              }
+            >
+              {isProductInWishlist ? "Remove from wishlist" : "Add to wishlist"}
+            </button>
+          </div>
         </div>
       </div>
     </div>

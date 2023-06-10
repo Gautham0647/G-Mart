@@ -9,27 +9,30 @@ https://aromacart.netlify.app/
 `git clone : https://github.com/Gautham0647/G-Mart
 cd Aroma Cart
 npm install
-npm start
+npm start`
 
 ## Features
 
-* Home Page
-* Product Listing Page
-* Single Product Page
-* Filters by
- - Price
- - Category
- - Ratings
-* Wishlist Management
-* Cart Management
-* Search
-- Loading & Alerts
-- Authentication
-- Sign-up
-- Login
-- Logout
-- Address Management
-- Checkout
+- Home Page
+- Product Listing Page
+- Single Product Page
+- Filters by
+
+* Price
+* Category
+* Ratings
+
+- Wishlist Management
+- Cart Management
+- Search
+
+* Loading & Alerts
+* Authentication
+* Sign-up
+* Login
+* Logout
+* Address Management
+* Checkout
 
 # Logo
 
