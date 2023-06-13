@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import "./PriceCard.css";
 export function PriceCard({ cart }) {
+  
   const totalOriginalPrice = cart.reduce(
-    (acc, { count, originalPrice }) => acc + originalPrice * count,
+    (acc, { qty, originalPrice }) => acc + originalPrice * qty,
     0
   );
   const totalDiscount = cart.reduce(
-    (acc, { count, discountPercent, originalPrice }) =>
-      acc + (count * originalPrice * discountPercent) / 100,
+    (acc, { qty, discountPercent, originalPrice }) =>
+      acc + (qty * originalPrice * discountPercent) / 100,
     0
   );
   const totalDiscountedPrice = totalOriginalPrice - totalDiscount;

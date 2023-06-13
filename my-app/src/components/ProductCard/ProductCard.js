@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import StarIcon from "@mui/icons-material/Star";
@@ -11,11 +10,12 @@ import { toast } from "react-toastify";
 import Spinner from "../Loader";
 
 export function ProductCard({ product }) {
-  const { pathname } = useLocation();
+  //const { pathname } = useLocation();
   const navigate = useNavigate();
   const { isAuth } = useAuth();
-  const { cart, cartDispatch } = useCart();
-  const { wishlist, wishlistDispatch } = useWishlist();
+  const { cart, loader, addToCartApi } = useCart();
+  const { wishlist, addToWishlistHandler, removeFromWishlisthandler } =
+    useWishlist();
 
   const {
     _id,
@@ -29,29 +29,22 @@ export function ProductCard({ product }) {
 
   const isProductInCart = cart.find((item) => item._id === product._id);
   const isProductInWishlist = wishlist.find((item) => item._id === product._id);
-  const [loader, setLoader] = useState();
-  const addToCartHandler = () => {
-    // if not logged in navigate to /login
-    setLoader(true);
-    if (!isAuth) return navigate("/login");
 
+  const addToCartHandler = (product) => {
+    // if not logged in navigate to /login
+    if (!isAuth) return navigate("/login");
     // location?
     // if /cart --> a
     // a remove from cart
-    if (pathname !== "/cart" && isProductInCart) return navigate("/cart");
-
+    if (isProductInCart) {
+      return navigate("/cart");
+    }
     // else b go to cart
-    setTimeout(() => {
-      setLoader(false);
-    }, 200);
-    toast.success("Product Added to Cart");
-    return isProductInCart
-      ? cartDispatch({ type: "REMOVE-FROM-CART", payload: product._id })
-      : cartDispatch({ type: "ADD-TO-CART", payload: product });
+    return addToCartApi(product);
   };
+
   const addToCartButtonText = () => {
-    if (pathname !== "/cart" && isProductInCart) return "Go to Cart";
-    return isProductInCart ? "Remove from Cart" : "Add to Cart";
+    return isProductInCart ? "Go to Cart" : "Add to Cart";
   };
 
   return (
@@ -79,7 +72,10 @@ export function ProductCard({ product }) {
         {loader ? (
           <Spinner className="small-loader"></Spinner>
         ) : (
-          <button className="product-add-to-cart" onClick={addToCartHandler}>
+          <button
+            className="product-add-to-cart"
+            onClick={() => addToCartHandler(product)}
+          >
             {addToCartButtonText()}
           </button>
         )}
@@ -87,11 +83,7 @@ export function ProductCard({ product }) {
           <FavoriteRoundedIcon
             onClick={() => {
               toast.success("Product Removed from Wishlist");
-
-              return wishlistDispatch({
-                type: "REMOVE-FROM-WISHLIST",
-                payload: product._id,
-              });
+              removeFromWishlisthandler(product._id);
             }}
             color="primary"
             className="heart-icon icon-red"
@@ -99,12 +91,8 @@ export function ProductCard({ product }) {
         ) : (
           <FavoriteBorderRoundedIcon
             onClick={() => {
-              toast.success("Product Added to Wishlist");
-
-              return wishlistDispatch({
-                type: "ADD TO WISHLIST",
-                payload: product,
-              });
+              toast.success("Product Added to wishlist");
+              addToWishlistHandler(product);
             }}
             color="primary"
             className="heart-icon"

@@ -1,8 +1,10 @@
+import { toast } from "react-toastify";
+
 import { useWishlist } from "../../Context/WishlistContext";
 import "./WishlistCard.css";
 
 export function WishlistCard({ product }) {
-  const { wishlistDispatch } = useWishlist();
+  const { removeFromWishlisthandler } = useWishlist();
   const {
     productName,
     productImage,
@@ -27,12 +29,10 @@ export function WishlistCard({ product }) {
           </div>
           <div className="wishlist_footer">
             <button
-              onClick={() =>
-                wishlistDispatch({
-                  type: "REMOVE-FROM-WISHLIST",
-                  payload: product._id,
-                })
-              }
+              onClick={() => {
+                toast.success("Product Removed from Wishlist");
+                removeFromWishlisthandler(product._id);
+              }}
             >
               Remove from Wishlist
             </button>

@@ -5,6 +5,7 @@ import { useCart } from "../../Context/CartContext";
 import { CartProductCard } from "../../components/CartProductCard/CartProductCard";
 import "./Cart.css";
 import { PriceCard } from "../../components/PriceCard/PriceCard";
+import emptycartimg from "../../collections/EmptyCart.png"
 
 const Cart = () => {
   const { cart } = useCart();
@@ -18,6 +19,9 @@ const Cart = () => {
       {isCartEmpty ? (
         <div className="empty-cart">
           <p>You have no items in your shopping cart.</p>
+          <div className="emptycartimg">
+            <img  className="empty-img" src={emptycartimg} alt="empty cart"/>
+          </div>
           <p>
             <Link className="link" to="/">
               Shop Now

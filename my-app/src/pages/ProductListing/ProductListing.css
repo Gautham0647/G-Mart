@@ -12,6 +12,7 @@
 .product-list-container {
   padding: 1rem 3rem;
   text-align: center;
+  background-color: #f1f1f9;
 }
 
 .product-list-container span {

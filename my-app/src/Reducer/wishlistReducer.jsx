@@ -2,6 +2,13 @@ export const initialWishlistState = [];
 
 export const wishlistReducer = (state, action) => {
   switch (action.type) {
+    case "UPDATE-WISHLIST": {
+      return [...action.payload];
+    }
+    case "DELETE-WISHLIST": {
+      return [...action.payload];
+    }
+
     case "ADD TO WISHLIST":
       const existingProduct = state.find(
         (product) => product._id === action.payload._id

@@ -17,7 +17,7 @@ const Home = ({ categories }) => {
     <div>
       <Banner />
       <section className="section-Category">
-        <h2 className="header"> Product Categories</h2>
+        <h1 className="header"> Products Categories</h1>
         <CategoryCard />
       </section>
       <Footer />

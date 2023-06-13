@@ -1,9 +1,17 @@
+//import { useState } from "react";
 import { useCart } from "../../Context/CartContext";
 import "./CartProductCard.css";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
+//import { useAuth } from "../../Context/AuthContext";
 
 export function CartProductCard({ product }) {
-  const { cartDispatch } = useCart();
+  //const [loader, setLoader] = useState();
+  //const { isAuth, token } = useAuth();
+  const {
+    removeFromCartHandler,
+    increaseQuantityHandler,
+    decreaseQuantityHandler,
+  } = useCart();
   const {
     productName,
     productImage,
@@ -12,6 +20,7 @@ export function CartProductCard({ product }) {
     discountPercent,
     productDescription,
   } = product;
+
   return (
     <div className="cart_product_wrapper">
       <div className="cart_item">
@@ -28,38 +37,19 @@ export function CartProductCard({ product }) {
           </div>
           <div className="quantity-actions">
             <button
-              onClick={() => {
-                toast.success("Item removed");
-
-                return cartDispatch({
-                  type: "DECREASE-FROM-CART",
-                  payload: product,
-                });
-              }}
-              disabled={product.count <= 1}
+              onClick={() => decreaseQuantityHandler(product._id)}
+              disabled={product.qty <= 1}
             >
               -
             </button>
-            {product.count}
-            <button
-              onClick={() =>
-                cartDispatch({ type: "ADD-TO-CART", payload: product })
-              }
-            >
+            {product.qty}
+            <button onClick={() => increaseQuantityHandler(product._id)}>
               +
             </button>
           </div>
-          <div className="cart_footer">
-            <button
-              onClick={() => {
-                toast.success("Cart Emptied");
 
-                return cartDispatch({
-                  type: "REMOVE-FROM-CART",
-                  payload: product._id,
-                });
-              }}
-            >
+          <div className="cart_footer">
+            <button onClick={() => removeFromCartHandler(product._id)}>
               Remove from cart
             </button>
           </div>

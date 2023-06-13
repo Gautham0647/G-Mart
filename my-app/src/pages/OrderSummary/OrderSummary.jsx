@@ -5,13 +5,12 @@ import { useCart } from "../../Context/CartContext";
 import { useAddress } from "../../Context/AddressContext";
 
 export const OrderSummary = () => {
- const { cart } = useCart();
-  
+  const { cart } = useCart();
 
   const { addressState } = useAddress();
   const { selectedAddress } = addressState;
   const totalOriginalPrice = cart.reduce(
-    (acc, { count, originalPrice }) => acc + originalPrice * count,
+    (acc, { qty, originalPrice }) => acc + originalPrice * qty,
     0
   );
   return (
@@ -61,7 +60,7 @@ export const OrderSummary = () => {
                     </div>
                     <div className="details">
                       <p>Quantity: </p>
-                      <p>{count} Nos.</p>
+                      <p>{count} nos</p>
                     </div>
                     <div className="details">
                       <p>Price: </p>

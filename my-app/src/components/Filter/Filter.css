@@ -2,6 +2,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    background-color: #f1f1f9;
     
     grid-gap: 1rem;
     gap: 1rem;

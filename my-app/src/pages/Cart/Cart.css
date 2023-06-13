@@ -8,6 +8,17 @@ h1 {
   font-weight: 500;
 }
 
+.emptycartimg{
+  width: 100%;
+}
+
+.empty-img{
+  width: 550px;
+  height: 500px;
+  border-radius: 10px;
+}
+
+
 .link {
   text-align: center;
 }

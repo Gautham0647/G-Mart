@@ -2,6 +2,21 @@ export const initialCartState = [];
 
 export const cartReducer = (state, action) => {
   switch (action.type) {
+    case "UPDATE": {
+      return [...action.payload];
+    }
+    case "DELETE": {
+      return [...action.payload];
+    }
+    case "decrement": {
+      console.log(action.payload);
+      return [...action.payload];
+    }
+    case "increment": {
+      console.log(action.payload);
+      return [...action.payload];
+    }
+
     case "ADD-TO-CART": {
       // check if product exists
       const existingProduct = state.find(
@@ -19,8 +34,8 @@ export const cartReducer = (state, action) => {
             ...product,
             count:
               product._id === action.payload._id
-                ? product.count + 1
-                : product.count,
+                ? product.qty + 1
+                : product.qty,
           })),
         ];
         // return new cart
@@ -29,7 +44,7 @@ export const cartReducer = (state, action) => {
         // set product count value 1
         // add product to the new cart
         // return new cart
-        return [...state, { ...action.payload, count: 1 }];
+        return [...state, { ...action.payload, qty: 1 }];
       }
     }
     case "DECREASE-FROM-CART": {
@@ -38,9 +53,7 @@ export const cartReducer = (state, action) => {
         ...state.map((product) => ({
           ...product,
           count:
-            product._id === action.payload._id
-              ? product.count - 1
-              : product.count,
+            product._id === action.payload._id ? product.qty - 1 : product.qty,
         })),
       ];
       // return [

@@ -5,16 +5,15 @@
     display: flex;
 	flex-flow: column nowrap;
 	padding: 2rem 10rem;
-	gap: 3rem;
-	background-color:#e5e3f5
+	
+	background-color:#f1f1f9
 }
 
 
 .header{
     text-align: center;
     padding: 10px;
-    font-weight: 500;
-
+	font-size: 30px;
 }
 
 .categories-item{
